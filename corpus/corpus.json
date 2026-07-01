@@ -157,9 +157,9 @@
     "source_type": "resume",
     "title": "Career summary",
     "section": "bio",
-    "text": "I am a Staff and Principal level AI engineer based in NYC with over fifteen years spanning classical information retrieval and modern AI. My path goes from relevance ranking, model training, and learning to rank on production search systems, into agentic and multimodal systems that span retrieval, ranking, and image generation. The through line is the same question across both eras: how do you put the right information in front of the model or the person at the right moment. I describe my work as the line between retrieval and intelligence.",
+    "text": "I am a Staff and Principal level AI engineer based in NYC with over fifteen years spanning classical information retrieval and modern AI. For the past four years I have been at Shutterstock working on multimodal generative AI. Before that I spent four to six years as a professional services and consulting engineer, working directly with customers to deliver search and AI systems. My path runs from relevance ranking, model training, and learning to rank on production search systems, into agentic and multimodal systems that span retrieval, ranking, and image generation. The through line across every role is the same question: how do you put the right information in front of the model or the person at the right moment. I describe my work as the line between retrieval and intelligence.",
     "url": "",
-    "tags": ["staff", "principal", "NYC", "IR", "AI"]
+    "tags": ["staff", "principal", "NYC", "Shutterstock", "multimodal-generative", "consulting", "customer-facing"]
   },
   {
     "id": "resume-ir-era-01",
@@ -175,9 +175,9 @@
     "source_type": "resume",
     "title": "Agentic and multimodal systems",
     "section": "role",
-    "text": "My current work is building agentic and multimodal systems: retrieval augmented generation with real tool routing, multimodal search over images and video, and image generation pipelines. I keep these systems framework free, using the model SDK tool API directly rather than an orchestration framework, and I keep evaluation hand rolled and reusable. The classical IR background is the advantage here, because grounding and relevance are exactly the problems that decide whether one of these systems is trustworthy.",
+    "text": "My current work at Shutterstock, over the past four years, is building multimodal generative AI and agentic systems: retrieval augmented generation with real tool routing, multimodal search over images and video, and image generation pipelines. I keep these systems framework free, using the model SDK tool API directly rather than an orchestration framework, and I keep evaluation hand rolled and reusable. The classical IR background and my years of customer facing consulting are the advantage here, because grounding, relevance, and understanding what a user actually needs are exactly the problems that decide whether one of these systems is trustworthy.",
     "url": "",
-    "tags": ["agentic", "multimodal", "RAG", "image-generation"]
+    "tags": ["agentic", "multimodal", "generative", "RAG", "Shutterstock"]
   },
   {
     "id": "talk-opensearchcon-01",

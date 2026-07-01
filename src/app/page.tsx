@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Portrait } from "@/components/portrait";
 import { CurrentWork } from "@/components/current-work";
 import { InlineInvite } from "@/components/inline-invite";
-import { positioning, skillChips, navOut, site } from "@/lib/content";
+import { positioning, skillChips, navOut, site, roleNow, rolePrior } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -24,7 +24,20 @@ export default function Home() {
                   {site.location}
                 </span>
               </h1>
-              <p className="mt-3 max-w-[460px] text-[15px] leading-relaxed text-secondary">
+
+              {/* Current role + prior background */}
+              <div className="mt-2.5 space-y-1 font-meta text-[12px] leading-relaxed">
+                <p className="text-secondary">
+                  <span className="text-tertiary">now</span> ·{" "}
+                  <span className="text-primary">{roleNow.employer}</span> ·{" "}
+                  {roleNow.focus} · {roleNow.tenure}
+                </p>
+                <p className="text-tertiary">
+                  <span>prior</span> · {rolePrior}
+                </p>
+              </div>
+
+              <p className="mt-4 max-w-[460px] text-[15px] leading-relaxed text-secondary">
                 {positioning}
               </p>
               <ul className="mt-5 flex flex-wrap gap-2">

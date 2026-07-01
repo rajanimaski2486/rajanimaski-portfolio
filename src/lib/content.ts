@@ -17,6 +17,15 @@ export const site = {
   resume: "/RajaniMaski_Resume_June_2026.pdf",
 };
 
+// Current role + prior background (mono lines under the headline).
+export const roleNow = {
+  employer: "Shutterstock",
+  focus: "multimodal generative AI",
+  tenure: "4 yrs",
+};
+export const rolePrior =
+  "professional services and consulting engineering, customer facing · 4 to 6 yrs";
+
 // Verbatim from spec — do not paraphrase.
 export const positioning =
   "15+ years from classical IR to modern AI: model training, relevance ranking, and learning-to-rank, retrieval serving 2000+ RPS in production. Now building agentic and multimodal systems spanning retrieval, ranking, and image generation. Working the line between retrieval and intelligence.";
