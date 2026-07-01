@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Portrait } from "@/components/portrait";
 import { CurrentWork } from "@/components/current-work";
 import { InlineInvite } from "@/components/inline-invite";
-import { positioning, skillChips, navOut, site, roleNow, rolePrior } from "@/lib/content";
+import { positioning, navOut, site, roleNow, rolePrior } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -25,31 +25,22 @@ export default function Home() {
                 </span>
               </h1>
 
-              {/* Current role + prior background */}
-              <div className="mt-2.5 space-y-1 font-meta text-[12px] leading-relaxed">
-                <p className="text-secondary">
-                  <span className="text-tertiary">now</span> ·{" "}
-                  <span className="text-primary">{roleNow.employer}</span> ·{" "}
-                  {roleNow.focus} · {roleNow.tenure}
-                </p>
-                <p className="text-tertiary">
-                  <span>prior</span> · {rolePrior}
-                </p>
-              </div>
+              {/* Current role — the prominent line */}
+              <p className="mt-2 text-[16px] leading-snug text-secondary">
+                <span className="text-primary">{roleNow.employer}</span>
+                <span className="text-tertiary"> · </span>
+                {roleNow.focus}
+                <span className="text-tertiary"> · {roleNow.tenure}</span>
+              </p>
+              {/* Prior background — one subtle mono line */}
+              <p className="mt-1.5 font-meta text-[11px] leading-relaxed text-tertiary">
+                prior · {rolePrior}
+              </p>
 
-              <p className="mt-4 max-w-[460px] text-[15px] leading-relaxed text-secondary">
+              {/* Positioning — supporting text, smaller than the role */}
+              <p className="mt-4 max-w-[440px] text-[13px] leading-relaxed text-secondary">
                 {positioning}
               </p>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {skillChips.map((chip) => (
-                  <li
-                    key={chip}
-                    className="rounded-full border px-2.5 py-1 font-meta text-[11px] text-secondary"
-                  >
-                    {chip}
-                  </li>
-                ))}
-              </ul>
             </div>
 
             {/* Right column — portrait (stacks above, centered, on mobile) */}
