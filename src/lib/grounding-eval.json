@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-30",
+  "grounded": {
+    "passed": 8,
+    "total": 8
+  },
+  "guardrail": {
+    "passed": 4,
+    "total": 4
+  }
+}

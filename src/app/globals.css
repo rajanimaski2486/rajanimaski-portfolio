@@ -2,26 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Design tokens (PORTFOLIO_SPEC.md "Design tokens").
+  Dark, near-black blue-black base. One accent: #5dcca5 (cyan-green),
+  used ONLY where it means something. Two text weights only (500 / 400).
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background layers */
+  --base: #0a0e14;        /* near-black, blue-black */
+  --surface: #10151d;     /* cards */
+  --panel: #151b24;       /* chat / elevated */
+
+  /* Accent (used sparingly, see spec) */
+  --accent: #5dcca5;      /* cyan-green */
+  --accent-rgb: 93, 204, 165;
+
+  /* Text tiers */
+  --text-primary: #e6e9ee;    /* off-white, never pure white */
+  --text-secondary: #9aa3af;
+  --text-tertiary: #7a828f;   /* metadata */
+
+  /* Borders */
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.12);
+
+  /* Aliases used by some shadcn-style primitives */
+  --background: var(--base);
+  --foreground: var(--text-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border-default);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--base);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer base {
+  /* Headlines and body share the sans; only two weights are used site-wide. */
+  h1, h2, h3, h4 {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  /* Mono metadata: name, nav, chips, links, labels. */
+  .font-meta {
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+}
+
+/* One-time chat-pill attention pulse (never loops; see Day 4). */
+@keyframes pill-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.45); border-color: rgba(var(--accent-rgb), 0.9); }
+  70%  { box-shadow: 0 0 0 10px rgba(var(--accent-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0); }
 }

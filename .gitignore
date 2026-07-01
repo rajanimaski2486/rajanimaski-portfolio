@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python (local indexing/eval tooling)
+.venv/
+__pycache__/
+*.pyc
+
+# claude code local machine config
+.claude/settings.local.json

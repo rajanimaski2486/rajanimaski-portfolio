@@ -1,0 +1,263 @@
+[
+  {
+    "id": "reveal-purpose-01",
+    "source_type": "projects",
+    "title": "Reveal",
+    "section": "purpose",
+    "text": "Reveal is an agentic image retrieval and culling system for large photo and asset libraries. The problem it solves is volume: when a shoot or an archive produces tens of thousands of near duplicate frames, a person cannot review them all, and flat similarity search returns clusters that still need human judgment. Reveal pairs retrieval with a culling loop that proposes the strongest representative frames per scene and lets a reviewer confirm or override. The goal is to compress hours of manual selection into minutes while keeping a human in control of the final cut.",
+    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
+    "tags": ["NVIDIA NIM", "OpenSearch", "multimodal", "culling"]
+  },
+  {
+    "id": "reveal-stack-01",
+    "source_type": "projects",
+    "title": "Reveal",
+    "section": "stack",
+    "text": "Reveal is built framework free. Retrieval runs on OpenSearch with a hybrid of BM25 over captions and kNN over image and text embeddings. Generation and tool routing use the OpenAI SDK pointed at NVIDIA NIM as the primary model, with gpt-4o-mini as the fallback. There is no LangChain or LlamaIndex in the path. The serving layer is a thin Vercel function. This keeps the moving parts few and the latency predictable, which matters when a reviewer is iterating quickly over a set.",
+    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
+    "tags": ["OpenSearch", "NVIDIA NIM", "OpenAI SDK", "Vercel"]
+  },
+  {
+    "id": "reveal-role-01",
+    "source_type": "projects",
+    "title": "Reveal",
+    "section": "role",
+    "text": "On Reveal I own the system end to end: the retrieval design, the embedding choice and index mapping, the culling heuristics, and the serving function. My specific contribution is the relevance layer. I brought the learning to rank experience from classical IR into a modern multimodal setting, treating culling as a ranking problem over candidate frames rather than a pure clustering problem. That framing is what makes the representative selection feel principled instead of arbitrary.",
+    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
+    "tags": ["learning-to-rank", "retrieval"]
+  },
+  {
+    "id": "reveal-decision-01",
+    "source_type": "projects",
+    "title": "Reveal",
+    "section": "decision",
+    "text": "The hardest decision on Reveal was whether to use a heavy orchestration framework or to stay framework free with direct SDK tool calling. The pull toward a framework was real: it promises graph based control flow and prebuilt retrievers. I chose to stay framework free because the corpus and the control flow were small enough that the SDK tool API covered every case, and because each framework layer adds a debugging surface and a version treadmill that I would own forever. The senior signal here is knowing that tool routing is the thing I actually needed, and that I did not need a framework to get it. The cost was writing the routing and the eval harness by hand. The benefit is a system I can reason about completely.",
+    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
+    "tags": ["framework-free", "tool-routing", "architecture"]
+  },
+  {
+    "id": "reveal-result-01",
+    "source_type": "projects",
+    "title": "Reveal",
+    "section": "result",
+    "text": "Reveal turns a multi hour manual culling pass into a guided session of minutes for the sets it has been tested on, while keeping the reviewer as the final authority on every kept frame. The grounded approach also means the system explains its picks: each representative frame points back to the scene and the signals that surfaced it. The remaining work is scaling the index and tightening the low confidence behavior so the system stays quiet when it is unsure rather than guessing.",
+    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
+    "tags": ["results"]
+  },
+  {
+    "id": "scenefinder-purpose-01",
+    "source_type": "projects",
+    "title": "Scene Finder",
+    "section": "purpose",
+    "text": "Scene Finder is multimodal scene search across video and stills. You describe a scene in natural language, for example a wide shot at dusk with two people walking, and it retrieves the matching moments from a library of footage and images. It exists because timecode and filename search do not match how people remember footage. People remember content and mood, so the search has to operate over what is actually in the frame.",
+    "url": "https://github.com/rajani-maski/scene-finder",
+    "tags": ["multimodal", "video", "retrieval"]
+  },
+  {
+    "id": "scenefinder-stack-01",
+    "source_type": "projects",
+    "title": "Scene Finder",
+    "section": "stack",
+    "text": "Scene Finder samples frames from video, embeds them with a CLIP class image and text model, and indexes the vectors in OpenSearch with kNN enabled. Queries are embedded with the same model and matched by vector similarity, with a lexical fallback over any available captions. The design choice that matters most is the sampling rate: too sparse and you miss brief moments, too dense and the index and cost balloon. The retrieval and serving stay framework free, consistent with the rest of the portfolio.",
+    "url": "https://github.com/rajani-maski/scene-finder",
+    "tags": ["CLIP", "OpenSearch", "kNN"]
+  },
+  {
+    "id": "scenefinder-decision-01",
+    "source_type": "projects",
+    "title": "Scene Finder",
+    "section": "decision",
+    "text": "The hardest decision on Scene Finder was the frame sampling strategy. A fixed interval is simple but wastes vectors on static footage and misses fast cuts. I chose an adaptive sampler that keys frames on visual change, so dense action gets more samples and a held shot gets fewer. This kept the index size reasonable without losing the brief moments that users actually search for. The reasoning is the same relevance instinct from ranking work: spend resolution where the signal is.",
+    "url": "https://github.com/rajani-maski/scene-finder",
+    "tags": ["sampling", "architecture"]
+  },
+  {
+    "id": "gridwatch-purpose-01",
+    "source_type": "projects",
+    "title": "GridWatch",
+    "section": "purpose",
+    "text": "GridWatch is anomaly detection and ranking over operational telemetry. Rather than firing an alert for every threshold breach, it ranks anomalies by how unusual and how actionable they are, so an on call engineer sees the few signals that matter first. It treats alerting as a ranking problem, which is a direct application of learning to rank to observability.",
+    "url": "https://github.com/rajanim/GridWatch",
+    "tags": ["learning-to-rank", "observability"]
+  },
+  {
+    "id": "gridwatch-decision-01",
+    "source_type": "projects",
+    "title": "GridWatch",
+    "section": "decision",
+    "text": "The hardest decision on GridWatch was how aggressively to suppress alerts. Suppress too much and you hide a real incident, suppress too little and you recreate the noise the tool was meant to fix. I chose to rank rather than filter: nothing is hidden, but the ordering pushes low value alerts down. That preserves recall while still giving the operator a clean top of list, and it makes the suppression auditable because every alert is still present and explainable by its rank.",
+    "url": "https://github.com/rajanim/GridWatch",
+    "tags": ["ranking", "architecture"]
+  },
+  {
+    "id": "openclaw-purpose-01",
+    "source_type": "projects",
+    "title": "OpenClaw",
+    "section": "purpose",
+    "text": "OpenClaw is open retrieval tooling for grounded question answering over a defined corpus. It is the reusable core behind the grounded answers in this portfolio: tool routing over distinct retrieval functions, a guardrail that refuses out of scope questions, and a hand rolled grounding eval. The point of OpenClaw is to show that you can build trustworthy retrieval without a heavyweight framework.",
+    "url": "https://github.com/rajani-maski/openclaw",
+    "tags": ["RAG", "tool-routing", "framework-free"]
+  },
+  {
+    "id": "openclaw-decision-01",
+    "source_type": "projects",
+    "title": "OpenClaw",
+    "section": "decision",
+    "text": "The hardest decision on OpenClaw was where to put the guardrail. The naive place is after retrieval, but that wastes a search call and risks answering from weakly related chunks. I run a relevance gate before retrieval and a low confidence gate after it. The pre check refuses anything not about the subject with a single fixed line, and the post check refuses when the top retrieval score falls below a threshold. Two gates, one fixed refusal, no fabrication. The out of scope behavior is the highest value part of the system because it is what makes the grounded answers trustworthy.",
+    "url": "https://github.com/rajani-maski/openclaw",
+    "tags": ["guardrail", "architecture"]
+  },
+  {
+    "id": "selective-search-purpose-01",
+    "source_type": "projects",
+    "title": "Selective search",
+    "section": "purpose",
+    "text": "Selective search reduces the cost of search over massive collections with limited computing resources. Most search engine frameworks split a large collection into subunits called shards to use distributed computing, and at query time they search every shard for every query, which is expensive at scale. This project investigates partitioning a collection into shards of similar documents and then searching across only a few relevant shards per query instead of all of them, without hurting search quality. Dividing the collection by document content similarity is called topic based partitioning, and searching only a few relevant shards for a given query is called selective search, following the research by Kulkarni et al.",
+    "url": "https://github.com/rajanim/selective-search",
+    "tags": ["retrieval", "distributed-search", "topic-partitioning", "research"]
+  },
+  {
+    "id": "selective-search-result-01",
+    "source_type": "projects",
+    "title": "Selective search",
+    "section": "result",
+    "text": "The payoff of selective search is lower search cost at comparable quality. Because documents are grouped into topic based shards, a query only needs to touch the few shards likely to hold relevant documents rather than the entire collection, which cuts the work per query in an environment with a large dataset and low compute. This is the same relevance instinct that runs through my other work: spend the compute where the signal is, and prove the quality holds with evaluation rather than assuming it. There is a recorded presentation of this work.",
+    "url": "https://youtu.be/CLX41ePTk3Q",
+    "tags": ["retrieval", "ranking", "research", "efficiency"]
+  },
+  {
+    "id": "am-i-replaceable-purpose-01",
+    "source_type": "projects",
+    "title": "Am I replaceable by AI",
+    "section": "purpose",
+    "text": "Am I replaceable by AI is a small, playful calculator that estimates how replaceable a given job is by AI. It is an educational and entertainment app, built to make the abstract question of AI job impact tangible and a little fun. It is deliberately lightweight, the opposite end of the spectrum from the production retrieval systems, and a way to keep building and shipping small things.",
+    "url": "https://github.com/rajanimaski2486/am_i_replacable_by_ai_calculator",
+    "tags": ["app", "educational", "LLM", "fun"]
+  },
+  {
+    "id": "dessert-near-me-purpose-01",
+    "source_type": "projects",
+    "title": "Dessert near me",
+    "section": "purpose",
+    "text": "Dessert near me is a fun app that helps you find desserts nearby. It is an entertainment project rather than a research one, a light break from the retrieval and ranking work, and there is a short recorded demo of it in action.",
+    "url": "https://github.com/rajanimaski2486/dessert-near-me",
+    "tags": ["app", "location", "fun"]
+  },
+  {
+    "id": "resume-ir-serving-01",
+    "source_type": "projects",
+    "title": "Relevance serving at 2000+ RPS",
+    "section": "result",
+    "text": "Earlier in my career I worked on production relevance and ranking systems that served more than 2000 requests per second. The number itself is not the story. The story is what it takes to hold that throughput while keeping relevance good: careful index sharding and replica layout so query load spreads evenly, learning to rank models that were small and fast enough to score within the latency budget, aggressive caching of the hot query space, and load testing that pushed well past the target so the steady state had headroom. Sustaining 2000 plus RPS in production is mostly the unglamorous work of measuring tail latency and removing the slowest path, repeatedly. That discipline is what I carry into the agentic and multimodal systems I build now.",
+    "url": "",
+    "tags": ["2000 RPS", "learning-to-rank", "relevance", "production"]
+  },
+  {
+    "id": "resume-summary-01",
+    "source_type": "resume",
+    "title": "Career summary",
+    "section": "bio",
+    "text": "I am a Staff and Principal level AI engineer based in NYC with over fifteen years spanning classical information retrieval and modern AI. My path goes from relevance ranking, model training, and learning to rank on production search systems, into agentic and multimodal systems that span retrieval, ranking, and image generation. The through line is the same question across both eras: how do you put the right information in front of the model or the person at the right moment. I describe my work as the line between retrieval and intelligence.",
+    "url": "",
+    "tags": ["staff", "principal", "NYC", "IR", "AI"]
+  },
+  {
+    "id": "resume-ir-era-01",
+    "source_type": "resume",
+    "title": "Classical IR and relevance ranking",
+    "section": "role",
+    "text": "For much of my early career I worked on search relevance and ranking: tuning analyzers and query parsing, building learning to rank pipelines, running offline relevance evaluation, and operating retrieval at production scale. This is where the habits formed that still define how I work: measure relevance with a held out judgment set, treat latency as a first class constraint, and never ship a ranking change without an eval that shows it helped. Retrieval serving more than 2000 requests per second came out of this period.",
+    "url": "",
+    "tags": ["learning-to-rank", "relevance", "evaluation"]
+  },
+  {
+    "id": "resume-ai-era-01",
+    "source_type": "resume",
+    "title": "Agentic and multimodal systems",
+    "section": "role",
+    "text": "My current work is building agentic and multimodal systems: retrieval augmented generation with real tool routing, multimodal search over images and video, and image generation pipelines. I keep these systems framework free, using the model SDK tool API directly rather than an orchestration framework, and I keep evaluation hand rolled and reusable. The classical IR background is the advantage here, because grounding and relevance are exactly the problems that decide whether one of these systems is trustworthy.",
+    "url": "",
+    "tags": ["agentic", "multimodal", "RAG", "image-generation"]
+  },
+  {
+    "id": "talk-opensearchcon-01",
+    "source_type": "talks",
+    "title": "Tool routing for grounded retrieval without a framework",
+    "section": "takeaway",
+    "text": "At OpenSearchCon India 2026 I argue for SDK native tool routing over orchestration frameworks for grounded retrieval. The core claim is that tool routing earns its place when the corpus spans distinct domains, because the model genuinely has to choose where to look, but that the framework around it often does not earn its place at small and medium scale. The interview line is: tool routing because the corpus spans distinct domains, kept framework free because the SDK tool API was sufficient.",
+    "url": "#",
+    "tags": ["OpenSearchCon", "tool-routing", "framework-free"]
+  },
+  {
+    "id": "talk-optimizedai-01",
+    "source_type": "talks",
+    "title": "From learning to rank to agentic retrieval",
+    "section": "takeaway",
+    "text": "At the Optimized AI Conference 2026 in Atlanta I trace what classical learning to rank still teaches the agentic era. The takeaway is that relevance, evaluation discipline, and latency budgets did not go away when language models arrived; they became more important, because a confident wrong answer is worse than a slow one. The talk connects the old offline relevance harness to the modern grounding eval as the same idea in new clothing.",
+    "url": "#",
+    "tags": ["OptimizedAI", "learning-to-rank", "evaluation"]
+  },
+  {
+    "id": "writing-framework-free-01",
+    "source_type": "talks",
+    "title": "Why I keep retrieval framework free",
+    "section": "takeaway",
+    "text": "In my writing I make the case that for a static or slowly changing corpus, the SDK tool API is sufficient and an orchestration framework is mostly liability: another dependency, another debugging surface, another version treadmill. Framework free is not a rejection of frameworks everywhere; it is a deliberate position for the cases where routing and evaluation are simple enough to own directly. There is a separate comparative project where the framework choice is the point.",
+    "url": "#",
+    "tags": ["framework-free", "writing"]
+  },
+  {
+    "id": "courses-llm-rag-01",
+    "source_type": "courses",
+    "title": "Courses and continuing education",
+    "section": "summary",
+    "text": "I have completed more than forty courses across large language models, retrieval augmented generation, and agentic systems, alongside foundations in machine learning and information retrieval. Rather than list every course, the summary is the shape of the study: deep on retrieval and ranking, broad on the modern LLM stack, and hands on with the providers I actually build against. The detail lives here in the corpus; the resume carries one summarizing line.",
+    "url": "",
+    "tags": ["courses", "LLM", "RAG", "agentic"]
+  },
+  {
+    "id": "certs-01",
+    "source_type": "courses",
+    "title": "Certifications",
+    "section": "summary",
+    "text": "My named certifications include AWS GenAI Professional and the NVIDIA NCP-AAI and NCA-AIIO credentials in agentic AI and AI infrastructure. I list only named certifications that are earned, not in progress coursework. The NVIDIA credentials reflect a deliberate focus on agentic AI and the infrastructure to serve it.",
+    "url": "",
+    "tags": ["AWS", "NVIDIA", "certifications"]
+  },
+  {
+    "id": "about-running-01",
+    "source_type": "about",
+    "title": "Running",
+    "section": "bio",
+    "text": "Outside work I run. The appeal is the same patience that retrieval work rewards: you show up, you log the distance, and the improvement arrives over months rather than days. Long steady mileage is my reset and my proof that compounding effort beats intensity.",
+    "url": "",
+    "tags": ["running", "personal"]
+  },
+  {
+    "id": "about-hiking-01",
+    "source_type": "about",
+    "title": "Hiking",
+    "section": "bio",
+    "text": "I hike on weekends, often where elevation is the only metric that matters. It is a reset from screens and a reminder that good systems, like good routes, are mostly preparation. The planning is the work; the trail is the payoff.",
+    "url": "",
+    "tags": ["hiking", "personal"]
+  },
+  {
+    "id": "about-autism-01",
+    "source_type": "about",
+    "title": "Autism advocacy",
+    "section": "bio",
+    "text": "Autism advocacy is work close to my heart. I support autistic people and their families and push for environments that assume capability and accommodate difference rather than the reverse. It shapes how I think about access and design in everything else I build, because a system that only works for the median user is not actually finished.",
+    "url": "",
+    "tags": ["autism", "advocacy", "personal"]
+  },
+  {
+    "id": "contact-01",
+    "source_type": "about",
+    "title": "Contact",
+    "section": "contact",
+    "text": "You can reach Rajani by email at rajani.maski@gmail.com, on GitHub at https://github.com/rajanim, and on LinkedIn at https://www.linkedin.com/in/rajanimaski. The resume PDF linked from the site header is the canonical document.",
+    "url": "mailto:rajani.maski@gmail.com",
+    "tags": ["contact"]
+  }
+]
