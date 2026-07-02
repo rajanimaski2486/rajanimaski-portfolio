@@ -49,6 +49,12 @@ export type CurrentWork = {
 // CURRENT WORK cards (landing). One line of "what" each; stack lives on /projects.
 export const currentWork: CurrentWork[] = [
   {
+    name: "Shutterstock AI Search",
+    what: "Conversational AI search that finds images, video, and music from a natural-language brief.",
+    href: "https://www.shutterstock.com/search?mode=ai",
+    deployed: true,
+  },
+  {
     name: "Reveal",
     what: "Agentic retrieval and culling over large image sets.",
     href: "https://intent-context-cognition-brown.vercel.app/",
@@ -58,12 +64,6 @@ export const currentWork: CurrentWork[] = [
     name: "GridWatch",
     what: "Anomaly detection and ranking over operational telemetry.",
     href: "https://github.com/rajanim/GridWatch",
-    deployed: false,
-  },
-  {
-    name: "Selective search",
-    what: "Topic-based selective search over document shards.",
-    href: "https://github.com/rajanim/selective-search",
     deployed: false,
   },
 ];
@@ -114,6 +114,19 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "shutterstock-ai-search",
+    name: "Shutterstock AI Search",
+    purpose:
+      "Conversational, generative AI search: describe your creative vision in natural language and get cross-media results across image, video, and music.",
+    status: "active",
+    tech: {
+      domain: "Multimodal discovery, generative search",
+      models: "generative AI",
+    },
+    tags: ["Retrieval", "Multimodal", "Generative"],
+    deployed: "https://www.shutterstock.com/search?mode=ai",
+  },
   {
     slug: "reveal",
     name: "Reveal",

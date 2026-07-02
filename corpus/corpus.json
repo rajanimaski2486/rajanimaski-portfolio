@@ -1,5 +1,14 @@
 [
   {
+    "id": "shutterstock-ai-search-purpose-01",
+    "source_type": "projects",
+    "title": "Shutterstock AI Search",
+    "section": "purpose",
+    "text": "Shutterstock AI Search is a conversational, generative AI tool that lets you find stock assets by describing your creative vision in natural language rather than typing strict keywords. It delivers cross media results, suggesting relevant images, videos, and music at the same time so a campaign stays cohesive. This is the multimodal discovery work I focus on at Shutterstock, bringing my retrieval and ranking background to a generative search experience.",
+    "url": "https://www.shutterstock.com/search?mode=ai",
+    "tags": ["Shutterstock", "multimodal", "generative", "search", "discovery"]
+  },
+  {
     "id": "reveal-purpose-01",
     "source_type": "projects",
     "title": "Reveal",
