@@ -24,7 +24,7 @@ export const roleNow = {
   tenure: "4 yrs",
 };
 export const rolePrior =
-  "professional services and consulting engineering, customer facing · 6 yrs";
+  "professional services and consulting engineering, customer facing · 6 yrs · software engineering · 7 yrs";
 
 // Verbatim from spec — do not paraphrase.
 export const positioning =
