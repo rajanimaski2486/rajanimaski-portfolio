@@ -18,15 +18,19 @@ export default function Home() {
           <div className="mt-10 flex flex-col-reverse items-center gap-7 md:mt-12 md:flex-row md:items-start md:justify-between md:gap-8">
             {/* Left column */}
             <div className="w-full">
-              <h1 className="text-[26px] font-medium leading-tight">
+              {/* Name */}
+              <h1 className="text-[28px] font-medium leading-tight text-primary">
+                {site.name}
+              </h1>
+              {/* Title + location */}
+              <p className="mt-1 text-[16px] leading-snug text-secondary">
                 {site.role}
-                <span className="ml-2.5 align-baseline font-meta text-[12px] font-normal text-tertiary">
+                <span className="ml-2 align-baseline font-meta text-[12px] text-tertiary">
                   {site.location}
                 </span>
-              </h1>
-
-              {/* Current role — the prominent line */}
-              <p className="mt-2 text-[16px] leading-snug text-secondary">
+              </p>
+              {/* Current employer */}
+              <p className="mt-2 text-[14px] leading-snug text-secondary">
                 <span className="text-primary">{roleNow.employer}</span>
                 <span className="text-tertiary"> · </span>
                 {roleNow.focus}
@@ -37,8 +41,8 @@ export default function Home() {
                 prior · {rolePrior}
               </p>
 
-              {/* Positioning — supporting text, smaller than the role */}
-              <p className="mt-4 max-w-[440px] text-[13px] leading-relaxed text-secondary">
+              {/* Positioning — smaller supporting text */}
+              <p className="mt-4 max-w-[440px] text-[12.5px] leading-relaxed text-secondary">
                 {positioning}
               </p>
             </div>

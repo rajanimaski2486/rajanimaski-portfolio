@@ -37,7 +37,7 @@ export const tools: ChatCompletionTool[] = [
     function: {
       name: "search_projects",
       description:
-        `Search Rajani's projects (${PROJECT_NAMES}, and past IR work): purpose, stack, role, hardest decision, results. Use for any question naming or about one of these projects, what was built, how, the 2000+ RPS retrieval system, and the fun or educational apps.`,
+        `Search Rajani's projects (${PROJECT_NAMES}, and past IR work): purpose, stack, role, hardest decision, results. Use for any question naming or about one of these projects, what was built, how, the 2000+ RPS Generative Discovery retrieval system at Shutterstock, and the fun or educational apps.`,
       parameters: {
         type: "object",
         properties: {

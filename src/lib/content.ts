@@ -20,11 +20,11 @@ export const site = {
 // Current role + prior background (mono lines under the headline).
 export const roleNow = {
   employer: "Shutterstock",
-  focus: "multimodal generative AI",
+  focus: "multimodal Discovery",
   tenure: "4 yrs",
 };
 export const rolePrior =
-  "professional services and consulting engineering, customer facing · 4 to 6 yrs";
+  "professional services and consulting engineering, customer facing · 6 yrs";
 
 // Verbatim from spec — do not paraphrase.
 export const positioning =

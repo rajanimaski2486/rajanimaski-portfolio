@@ -146,18 +146,18 @@
   {
     "id": "resume-ir-serving-01",
     "source_type": "projects",
-    "title": "Relevance serving at 2000+ RPS",
+    "title": "Generative Discovery retrieval at 2000+ RPS",
     "section": "result",
-    "text": "Earlier in my career I worked on production relevance and ranking systems that served more than 2000 requests per second. The number itself is not the story. The story is what it takes to hold that throughput while keeping relevance good: careful index sharding and replica layout so query load spreads evenly, learning to rank models that were small and fast enough to score within the latency budget, aggressive caching of the hot query space, and load testing that pushed well past the target so the steady state had headroom. Sustaining 2000 plus RPS in production is mostly the unglamorous work of measuring tail latency and removing the slowest path, repeatedly. That discipline is what I carry into the agentic and multimodal systems I build now.",
+    "text": "The 2000+ RPS retrieval system is the Generative Discovery infrastructure I architect in my current role as Staff Software Engineer, AI at Shutterstock. It powers RAG style generative AI applications by combining dense vector retrieval, hybrid search, and metadata grounding at more than 2000 requests per second across hundreds of nodes. Building it meant leading the Solr to OpenSearch migration that redesigned the retrieval layer for cloud native scale and enabled ML powered ranking pipelines, and continuously improving the ranking pipeline that retrieves and reranks the best candidates using learning to rank, bi encoders, and cross encoders. Retrieval architecture optimization drove a 25 percent latency and cost reduction while relevance metrics improved, decoupling scale from quality tradeoffs. Retrieval quality is held accountable by offline and online evaluation frameworks built on precision and recall, relevance judgments, and human in the loop feedback.",
     "url": "",
-    "tags": ["2000 RPS", "learning-to-rank", "relevance", "production"]
+    "tags": ["2000 RPS", "Shutterstock", "Generative Discovery", "hybrid-search", "vector-retrieval", "OpenSearch", "learning-to-rank"]
   },
   {
     "id": "resume-summary-01",
     "source_type": "resume",
     "title": "Career summary",
     "section": "bio",
-    "text": "I am a Staff and Principal level AI engineer based in NYC with over fifteen years spanning classical information retrieval and modern AI. For the past four years I have been at Shutterstock working on multimodal generative AI. Before that I spent four to six years as a professional services and consulting engineer, working directly with customers to deliver search and AI systems. My path runs from relevance ranking, model training, and learning to rank on production search systems, into agentic and multimodal systems that span retrieval, ranking, and image generation. The through line across every role is the same question: how do you put the right information in front of the model or the person at the right moment. I describe my work as the line between retrieval and intelligence.",
+    "text": "I am a Staff and Principal level AI engineer based in NYC with over fifteen years spanning classical information retrieval and modern AI. For the past four years I have been at Shutterstock working on multimodal discovery. Before that I spent about six years as a professional services and consulting engineer, working directly with customers to deliver search and AI systems. My path runs from relevance ranking, model training, and learning to rank on production search systems, into agentic and multimodal systems that span retrieval, ranking, and image generation. The through line across every role is the same question: how do you put the right information in front of the model or the person at the right moment. I describe my work as the line between retrieval and intelligence.",
     "url": "",
     "tags": ["staff", "principal", "NYC", "Shutterstock", "multimodal-generative", "consulting", "customer-facing"]
   },
@@ -166,7 +166,7 @@
     "source_type": "resume",
     "title": "Classical IR and relevance ranking",
     "section": "role",
-    "text": "For much of my early career I worked on search relevance and ranking: tuning analyzers and query parsing, building learning to rank pipelines, running offline relevance evaluation, and operating retrieval at production scale. This is where the habits formed that still define how I work: measure relevance with a held out judgment set, treat latency as a first class constraint, and never ship a ranking change without an eval that shows it helped. Retrieval serving more than 2000 requests per second came out of this period.",
+    "text": "For much of my early career I worked on search relevance and ranking: tuning analyzers and query parsing, building learning to rank pipelines, running offline relevance evaluation, and operating retrieval at production scale. This is where the habits formed that still define how I work: measure relevance with a held out judgment set, treat latency as a first class constraint, and never ship a ranking change without an eval that shows it helped. Those habits now underpin the retrieval systems I build at Shutterstock.",
     "url": "",
     "tags": ["learning-to-rank", "relevance", "evaluation"]
   },
@@ -175,7 +175,7 @@
     "source_type": "resume",
     "title": "Agentic and multimodal systems",
     "section": "role",
-    "text": "My current work at Shutterstock, over the past four years, is building multimodal generative AI and agentic systems: retrieval augmented generation with real tool routing, multimodal search over images and video, and image generation pipelines. I keep these systems framework free, using the model SDK tool API directly rather than an orchestration framework, and I keep evaluation hand rolled and reusable. The classical IR background and my years of customer facing consulting are the advantage here, because grounding, relevance, and understanding what a user actually needs are exactly the problems that decide whether one of these systems is trustworthy.",
+    "text": "My current work at Shutterstock, over the past four years, is building multimodal discovery and agentic systems: retrieval augmented generation with real tool routing, multimodal search over images and video, and image generation pipelines. The centerpiece is Generative Discovery infrastructure combining dense vector retrieval, hybrid search, and metadata grounding at more than 2000 requests per second across hundreds of nodes. I keep these systems framework free, using the model SDK tool API directly rather than an orchestration framework, and I keep evaluation hand rolled and reusable. The classical IR background and my years of customer facing consulting are the advantage here, because grounding, relevance, and understanding what a user actually needs are exactly the problems that decide whether one of these systems is trustworthy.",
     "url": "",
     "tags": ["agentic", "multimodal", "generative", "RAG", "Shutterstock"]
   },
