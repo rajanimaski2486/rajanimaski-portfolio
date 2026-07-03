@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 700" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5dcca5"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5f726c"/>
+    </marker>
+    <style>
+      .bg     { fill: #0a0d0c; }
+      .group  { fill: #0f1513; stroke: #22302c; stroke-width: 1; }
+      .box    { fill: #131b18; stroke: #2b3d38; stroke-width: 1; }
+      .accentbox { fill: #10201b; stroke: #5dcca5; stroke-width: 1.2; }
+      .title  { fill: #eaf2ef; font-size: 26px; font-weight: 600; }
+      .subtitle { fill: #7f938d; font-size: 13px; font-weight: 400; }
+      .glabel { fill: #5dcca5; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+      .h      { fill: #eaf2ef; font-size: 14.5px; font-weight: 600; }
+      .t      { fill: #a9bcb6; font-size: 12.5px; font-weight: 400; }
+      .edge   { stroke: #5dcca5; stroke-width: 1.6; fill: none; }
+      .edgeMuted { stroke: #5f726c; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; }
+      .elabel { fill: #8ca39c; font-size: 11.5px; font-weight: 400; }
+      .accentlabel { fill: #5dcca5; font-size: 11.5px; font-weight: 500; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1040" height="700"/>
+
+  <text class="title" x="40" y="52">Portfolio RAG — system architecture</text>
+  <text class="subtitle" x="40" y="76">Framework-free · OpenAI SDK direct · OpenSearch retrieval · NeMo Retriever + NIM inference</text>
+
+  <!-- CLIENT -->
+  <g>
+    <rect class="group" x="300" y="104" width="452" height="104" rx="12"/>
+    <text class="glabel" x="320" y="128">Client · Next.js 14 App Router (Vercel)</text>
+    <rect class="box" x="318" y="140" width="180" height="52" rx="8"/>
+    <text class="h" x="332" y="163">Static pages</text>
+    <text class="t" x="332" y="181">/ · /projects · /talks · /about</text>
+    <rect class="box" x="510" y="140" width="110" height="52" rx="8"/>
+    <text class="h" x="524" y="163">Hero canvas</text>
+    <text class="t" x="524" y="181">latent-space</text>
+    <rect class="accentbox" x="632" y="140" width="104" height="52" rx="8"/>
+    <text class="h" x="646" y="163">Chat + voice</text>
+    <text class="t" x="646" y="181">docked pill</text>
+  </g>
+
+  <!-- SERVERLESS -->
+  <g>
+    <rect class="group" x="300" y="256" width="452" height="104" rx="12"/>
+    <text class="glabel" x="320" y="280">Serverless · Vercel Functions</text>
+    <rect class="box" x="318" y="292" width="196" height="52" rx="8"/>
+    <text class="h" x="332" y="315">POST /api/chat</text>
+    <text class="t" x="332" y="333">Node runtime · SSE stream</text>
+    <rect class="accentbox" x="526" y="292" width="210" height="52" rx="8"/>
+    <text class="h" x="540" y="311">RAG logic (framework-free)</text>
+    <text class="t" x="540" y="330">guardrail → route → retrieve</text>
+    <text class="t" x="540" y="345">→ gate → generate</text>
+  </g>
+
+  <!-- OPENSEARCH -->
+  <g>
+    <rect class="accentbox" x="300" y="416" width="196" height="96" rx="12"/>
+    <text class="glabel" x="316" y="440">Retrieval store</text>
+    <text class="h" x="316" y="464">OpenSearch · Aiven</text>
+    <text class="t" x="316" y="483">portfolio_corpus</text>
+    <text class="t" x="316" y="500">hybrid BM25 + kNN · 1024-d</text>
+  </g>
+
+  <!-- INFERENCE -->
+  <g>
+    <rect class="group" x="524" y="416" width="228" height="150" rx="12"/>
+    <text class="glabel" x="540" y="440">Inference · OpenAI SDK, direct</text>
+    <rect class="box" x="540" y="450" width="196" height="48" rx="8"/>
+    <text class="h" x="554" y="470">Embeddings · NeMo Retriever NIM</text>
+    <text class="t" x="554" y="488">nv-embedqa-e5-v5 · 1024-d</text>
+    <rect class="box" x="540" y="506" width="196" height="48" rx="8"/>
+    <text class="h" x="554" y="526">Generation</text>
+    <text class="t" x="554" y="544">NIM llama-3.1-70b → gpt-4o-mini</text>
+  </g>
+
+  <!-- INGESTION -->
+  <g>
+    <rect class="group" x="40" y="416" width="212" height="150" rx="12"/>
+    <text class="glabel" x="56" y="440">Ingestion · offline, one-time</text>
+    <rect class="box" x="56" y="450" width="180" height="48" rx="8"/>
+    <text class="h" x="70" y="470">corpus/corpus.json</text>
+    <text class="t" x="70" y="488">25 hand-authored chunks</text>
+    <rect class="box" x="56" y="506" width="180" height="48" rx="8"/>
+    <text class="h" x="70" y="526">index_corpus.py</text>
+    <text class="t" x="70" y="544">create · embed · bulk load</text>
+  </g>
+
+  <!-- EDGES -->
+  <!-- chat -> api (down) -->
+  <path class="edge" d="M660 208 L660 232 L416 232 L416 290" marker-end="url(#arrow)"/>
+  <text class="accentlabel" x="424" y="226">question</text>
+
+  <!-- rag -> opensearch -->
+  <path class="edge" d="M560 360 L560 388 L398 388 L398 414" marker-end="url(#arrow)"/>
+  <text class="accentlabel" x="406" y="382">hybrid query</text>
+
+  <!-- rag -> embeddings -->
+  <path class="edge" d="M660 360 L660 448" marker-end="url(#arrow)"/>
+  <text class="accentlabel" x="668" y="392">embed query</text>
+
+  <!-- generation -> chat (return tokens) -->
+  <path class="edge" d="M752 530 L800 530 L800 166 L738 166" marker-end="url(#arrow)"/>
+  <text class="accentlabel" x="808" y="352" transform="rotate(90 808 352)">SSE tokens</text>
+
+  <!-- indexer -> embeddings (passage) -->
+  <path class="edgeMuted" d="M236 512 L520 512" marker-end="url(#arrowMuted)"/>
+  <text class="elabel" x="300" y="506">passage embeddings</text>
+
+  <!-- indexer -> opensearch (write) -->
+  <path class="edgeMuted" d="M236 476 L262 476 L262 456 L296 456" marker-end="url(#arrowMuted)"/>
+  <text class="elabel" x="188" y="600">write vectors + fields → OpenSearch</text>
+</svg>
