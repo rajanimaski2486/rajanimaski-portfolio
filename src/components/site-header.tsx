@@ -1,17 +1,12 @@
-import Link from "next/link";
 import { FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { site } from "@/lib/content";
 
 // Mono header row. On the landing it sits over the hero canvas; on other pages
-// it sits on the base background. `handleHref` lets inner pages link the name home.
-export function SiteHeader({ handleHref = "/" }: { handleHref?: string }) {
+// it sits on the base background (inner pages link home via the footer).
+export function SiteHeader() {
   return (
     <header className="flex flex-wrap items-center gap-x-3 gap-y-1.5 font-meta text-[12px] text-secondary">
-      <Link href={handleHref} className="text-accent" aria-label="Home">
-        {site.handle}
-      </Link>
-      <span className="text-tertiary">·</span>
       <a
         href={site.github}
         target="_blank"

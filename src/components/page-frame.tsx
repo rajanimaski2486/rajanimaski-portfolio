@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/site-header";
-import { site } from "@/lib/content";
 
 // Calm, static chrome for inner pages. No hero motion below the landing.
 export function PageFrame({
@@ -32,13 +31,10 @@ export function PageFrame({
 
       <div className="mt-8">{children}</div>
 
-      <footer className="mt-12 flex items-center justify-between border-t pt-6 font-meta text-[11px] text-tertiary">
+      <footer className="mt-12 border-t pt-6 font-meta text-[11px] text-tertiary">
         <Link href="/" className="transition-colors hover:text-accent">
           ← home
         </Link>
-        <span>
-          {site.name} · {site.location}
-        </span>
       </footer>
     </main>
   );

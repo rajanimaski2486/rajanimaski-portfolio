@@ -8,7 +8,6 @@
 
 export const site = {
   name: "Rajani Maski",
-  handle: "rajanim", // mono, accent, header
   role: "Staff / Principal AI engineer",
   location: "NYC",
   email: "rajani.maski@gmail.com",
@@ -24,11 +23,11 @@ export const roleNow = {
   tenure: "4 yrs",
 };
 export const rolePrior =
-  "professional services and consulting engineering, customer facing · 6 yrs · software engineering · 7 yrs";
+  "professional services consulting engineer, customer facing · 6 yrs · software engineering · 7 yrs";
 
-// Verbatim from spec — do not paraphrase.
+// Positioning statement under the headline.
 export const positioning =
-  "15+ years from classical IR to modern AI: model training, relevance ranking, and learning-to-rank, retrieval serving 2000+ RPS in production. Now building agentic and multimodal systems spanning retrieval, ranking, and image generation. Working the line between retrieval and intelligence.";
+  "17+ years spanning classical IR to modern AI: model training, relevance ranking, learning-to-rank, and production retrieval serving 2,000+ RPS. Now building agentic and multimodal systems for generative discovery, ranking, and media content generation.";
 
 // Mono, bordered chips (spec order).
 export const skillChips = [
@@ -56,7 +55,7 @@ export const currentWork: CurrentWork[] = [
   },
   {
     name: "Reveal",
-    what: "Agentic retrieval and culling over large image sets.",
+    what: "Search finds. Reveal discovers. Generative Discovery on OpenSearch, an agentic query workflow built as a conference presentation for education and demo.",
     href: "https://intent-context-cognition-brown.vercel.app/",
     deployed: true,
   },

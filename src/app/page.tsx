@@ -30,14 +30,14 @@ export default function Home() {
                 </span>
               </p>
               {/* Current employer */}
-              <p className="mt-2 text-[14px] leading-snug text-secondary">
+              <p className="mt-2 text-[15px] leading-snug text-secondary">
                 <span className="text-primary">{roleNow.employer}</span>
                 <span className="text-tertiary"> · </span>
                 {roleNow.focus}
                 <span className="text-tertiary"> · {roleNow.tenure}</span>
               </p>
               {/* Prior background — one subtle mono line */}
-              <p className="mt-1.5 font-meta text-[11px] leading-relaxed text-tertiary">
+              <p className="mt-1.5 font-meta text-[13px] leading-relaxed text-tertiary">
                 prior · {rolePrior}
               </p>
 
@@ -75,9 +75,6 @@ export default function Home() {
             </Link>
           ))}
         </nav>
-        <footer className="font-meta text-[11px] text-tertiary">
-          {site.name} · {site.location}
-        </footer>
       </div>
     </main>
   );
