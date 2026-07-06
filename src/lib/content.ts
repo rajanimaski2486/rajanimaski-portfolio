@@ -129,12 +129,13 @@ export const projects: Project[] = [
   {
     slug: "reveal",
     name: "Reveal",
-    purpose: "Agentic retrieval and culling over large image sets.",
+    purpose:
+      "Single page app built during OpenSearchCon to demonstrate the three pillars of Generative Discovery. Intent: the query analyzed and encoded as a semantic vector that captures meaning and purpose, not just a bag of words. Context: a session vector that remembers the conversation, recency weighted. Cognition: reasoning that decomposes contradictory queries, filters, then LLM reranks.",
     status: "active",
     tech: {
       frameworks: "OpenAI SDK, Next.js",
       models: "NVIDIA NIM",
-      domain: "Multimodal retrieval",
+      domain: "Generative Discovery: Intent, Context, Cognition",
       infra: "Aiven OpenSearch, Vercel",
     },
     tags: ["Retrieval", "Multimodal", "Agentic"],

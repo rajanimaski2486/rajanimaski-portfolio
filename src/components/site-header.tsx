@@ -1,12 +1,25 @@
-import { FileText } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { site } from "@/lib/content";
 
 // Mono header row. On the landing it sits over the hero canvas; on other pages
-// it sits on the base background (inner pages link home via the footer).
-export function SiteHeader() {
+// it sits on the base background. Inner pages pass `home` to surface a back link.
+export function SiteHeader({ home = false }: { home?: boolean }) {
   return (
     <header className="flex flex-wrap items-center gap-x-3 gap-y-1.5 font-meta text-[12px] text-secondary">
+      {home ? (
+        <>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-primary"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            home
+          </Link>
+          <span className="text-tertiary">·</span>
+        </>
+      ) : null}
       <a
         href={site.github}
         target="_blank"

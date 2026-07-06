@@ -43,6 +43,9 @@ export function ChatPanel({
   const scrollRef = useRef<HTMLDivElement>(null);
   const asideRef = useRef<HTMLElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+  // Cache of answered questions (normalized) so an identical question replays the
+  // stored answer instead of regenerating it.
+  const cacheRef = useRef<Map<string, Message>>(new Map());
   // Refs so async voice callbacks read current values, not stale closures.
   const voiceModeRef = useRef(false);
   const finalAnswerRef = useRef("");
@@ -75,8 +78,23 @@ export function ChatPanel({
     const q = question.trim();
     if (!q || busy) return;
     setInput("");
-    setBusy(true);
     finalAnswerRef.current = "";
+
+    // Replay a previously answered question instead of regenerating it.
+    const key = q.toLowerCase();
+    const cached = cacheRef.current.get(key);
+    if (cached) {
+      finalAnswerRef.current = cached.content;
+      setMessages((prev) => [...prev, { role: "user", content: q }, { ...cached }]);
+      if (voiceModeRef.current && cached.content) {
+        speak(cached.content, () => {
+          if (voiceModeRef.current) startListening();
+        });
+      }
+      return;
+    }
+
+    setBusy(true);
     setMessages((prev) => [
       ...prev,
       { role: "user", content: q },
@@ -87,28 +105,54 @@ export function ChatPanel({
     const controller = new AbortController();
     abortRef.current = controller;
 
+    // Collect the final answer shape so we can cache it once complete.
+    let tools: string[] | undefined;
+    let citations: Citation[] | undefined;
+    let refusal = false;
+    let errored = false;
+
     await streamChat(
       q,
       {
-        onTools: (tools) => patchLast({ tools }),
-        onCitations: (citations) => patchLast({ citations }),
+        onTools: (t) => {
+          tools = t;
+          patchLast({ tools: t });
+        },
+        onCitations: (c) => {
+          citations = c;
+          patchLast({ citations: c });
+        },
         onToken: (t) => {
           finalAnswerRef.current += t;
           appendToken(t);
         },
         onRefusal: (text) => {
           finalAnswerRef.current = text;
+          refusal = true;
           patchLast({ content: text, refusal: true, pending: false });
         },
         onDone: () => patchLast({ pending: false }),
         onError: (msg) => {
           finalAnswerRef.current = "";
+          errored = true;
           patchLast({ content: msg, error: true, pending: false });
         },
       },
       controller.signal
     );
     setBusy(false);
+
+    // Cache successful answers (including refusals) so a repeat replays instantly.
+    if (!errored && !controller.signal.aborted && finalAnswerRef.current) {
+      cacheRef.current.set(key, {
+        role: "assistant",
+        content: finalAnswerRef.current,
+        tools,
+        citations,
+        refusal,
+        pending: false,
+      });
+    }
 
     // Voice mode: read the grounded answer back, then re-listen hands-free.
     if (voiceModeRef.current && finalAnswerRef.current) {

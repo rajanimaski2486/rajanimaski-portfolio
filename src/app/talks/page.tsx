@@ -114,9 +114,9 @@ export default function TalksPage() {
       </section>
 
       <div className="mt-8">
-        <InlineInvite prompt="What is the framework-free position on retrieval, and why?">
-          <span className="text-accent">Framework-free retrieval</span>. Ask the
-          agent why that is the deliberate position.
+        <InlineInvite prompt="What is Generative Discovery, and what do Intent, Context, and Cognition mean?">
+          <span className="text-accent">Generative Discovery</span>. Ask the agent
+          about Intent, Context, and Cognition from the talks.
         </InlineInvite>
       </div>
     </PageFrame>

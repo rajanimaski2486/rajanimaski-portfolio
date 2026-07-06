@@ -16,7 +16,7 @@ export function PageFrame({
 }) {
   return (
     <main className="mx-auto max-w-content px-6 pb-20 pt-6">
-      <SiteHeader />
+      <SiteHeader home />
       <div className="mt-10">
         <p className="font-meta text-[11px] uppercase tracking-[0.2em] text-tertiary">
           {eyebrow}
