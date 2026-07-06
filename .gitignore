@@ -42,3 +42,6 @@ __pycache__/
 
 # claude code local machine config
 .claude/settings.local.json
+
+# Local-only secrets for one-off prod re-index (never commit)
+scripts/.env.reindex
