@@ -13,35 +13,35 @@
     "source_type": "projects",
     "title": "Reveal",
     "section": "purpose",
-    "text": "Reveal is an agentic image retrieval and culling system for large photo and asset libraries. The problem it solves is volume: when a shoot or an archive produces tens of thousands of near duplicate frames, a person cannot review them all, and flat similarity search returns clusters that still need human judgment. Reveal pairs retrieval with a culling loop that proposes the strongest representative frames per scene and lets a reviewer confirm or override. The goal is to compress hours of manual selection into minutes while keeping a human in control of the final cut.",
-    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
-    "tags": ["NVIDIA NIM", "OpenSearch", "multimodal", "culling"]
+    "text": "Reveal is a single page application I built during OpenSearchCon to demonstrate the three pillars of Generative Discovery: Intent, Context, and Cognition. The idea is that search finds but discovery reveals. Intent is the user query, analyzed and encoded as a semantic vector that captures meaning, context, and purpose rather than just a bag of words. Context is a session vector that remembers the conversation and is recency weighted, so the system carries what came before. Cognition is the reasoning step: it decomposes contradictory queries, filters candidates, then applies an LLM rerank. Reveal is an education and demo piece that makes those pillars concrete against a live agentic query workflow.",
+    "url": "https://intent-context-cognition-brown.vercel.app/",
+    "tags": ["generative-discovery", "intent", "context", "cognition", "OpenSearch"]
   },
   {
     "id": "reveal-stack-01",
     "source_type": "projects",
     "title": "Reveal",
     "section": "stack",
-    "text": "Reveal is built framework free. Retrieval runs on OpenSearch with a hybrid of BM25 over captions and kNN over image and text embeddings. Generation and tool routing use the OpenAI SDK pointed at NVIDIA NIM as the primary model, with gpt-4o-mini as the fallback. There is no LangChain or LlamaIndex in the path. The serving layer is a thin Vercel function. This keeps the moving parts few and the latency predictable, which matters when a reviewer is iterating quickly over a set.",
-    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
-    "tags": ["OpenSearch", "NVIDIA NIM", "OpenAI SDK", "Vercel"]
+    "text": "Reveal is built framework free. Retrieval runs on OpenSearch with a hybrid of BM25 over text and kNN over embeddings, so the Intent vector and the recency weighted Context vector both resolve against the same index. Generation, query decomposition, and the LLM rerank in the Cognition step use the OpenAI SDK pointed at NVIDIA NIM as the primary model, with gpt-4o-mini as the fallback. There is no LangChain or LlamaIndex in the path. The app is a Next.js single page application served on Vercel. Keeping the moving parts few makes the pillars easy to explain and the demo predictable.",
+    "url": "https://intent-context-cognition-brown.vercel.app/",
+    "tags": ["OpenSearch", "NVIDIA NIM", "OpenAI SDK", "Next.js", "Vercel"]
   },
   {
     "id": "reveal-role-01",
     "source_type": "projects",
     "title": "Reveal",
     "section": "role",
-    "text": "On Reveal I own the system end to end: the retrieval design, the embedding choice and index mapping, the culling heuristics, and the serving function. My specific contribution is the relevance layer. I brought the learning to rank experience from classical IR into a modern multimodal setting, treating culling as a ranking problem over candidate frames rather than a pure clustering problem. That framing is what makes the representative selection feel principled instead of arbitrary.",
-    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
-    "tags": ["learning-to-rank", "retrieval"]
+    "text": "On Reveal I own the system end to end: the Intent and Context vector design, the embedding choice and index mapping, the Cognition reasoning path, and the serving function. My specific contribution is the relevance layer. I brought the learning to rank experience from classical IR into a modern multimodal setting, treating the final LLM rerank as a ranking problem over candidates rather than a single opaque generation. That framing is what makes discovery feel principled instead of arbitrary, and it is the through line from my classical IR background to generative discovery.",
+    "url": "https://intent-context-cognition-brown.vercel.app/",
+    "tags": ["learning-to-rank", "retrieval", "rerank"]
   },
   {
     "id": "reveal-decision-01",
     "source_type": "projects",
     "title": "Reveal",
     "section": "decision",
-    "text": "The hardest decision on Reveal was whether to use a heavy orchestration framework or to stay framework free with direct SDK tool calling. The pull toward a framework was real: it promises graph based control flow and prebuilt retrievers. I chose to stay framework free because the corpus and the control flow were small enough that the SDK tool API covered every case, and because each framework layer adds a debugging surface and a version treadmill that I would own forever. The senior signal here is knowing that tool routing is the thing I actually needed, and that I did not need a framework to get it. The cost was writing the routing and the eval harness by hand. The benefit is a system I can reason about completely.",
-    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
+    "text": "The hardest decision on Reveal was whether to use a heavy orchestration framework or to stay framework free with direct SDK tool calling. The pull toward a framework was real: it promises graph based control flow and prebuilt retrievers. I chose to stay framework free because the control flow behind Intent, Context, and Cognition was small enough that the SDK tool API covered every case, and because each framework layer adds a debugging surface and a version treadmill that I would own forever. The senior signal here is knowing that query decomposition and rerank were the things I actually needed, and that I did not need a framework to get them. The cost was writing the routing and the eval harness by hand. The benefit is a demo I can reason about and explain completely.",
+    "url": "https://intent-context-cognition-brown.vercel.app/",
     "tags": ["framework-free", "tool-routing", "architecture"]
   },
   {
@@ -49,9 +49,9 @@
     "source_type": "projects",
     "title": "Reveal",
     "section": "result",
-    "text": "Reveal turns a multi hour manual culling pass into a guided session of minutes for the sets it has been tested on, while keeping the reviewer as the final authority on every kept frame. The grounded approach also means the system explains its picks: each representative frame points back to the scene and the signals that surfaced it. The remaining work is scaling the index and tightening the low confidence behavior so the system stays quiet when it is unsure rather than guessing.",
-    "url": "https://github.com/rajanimaski2486/intent-context-cognition",
-    "tags": ["results"]
+    "text": "As a conference demo, Reveal makes Generative Discovery legible: a viewer can watch a query become an Intent vector, see Context accumulate across a session, and follow Cognition as it decomposes a contradictory query, filters, and reranks. The grounded approach also means the system explains its picks, pointing back to the signals that surfaced each result. It was built for education and demonstration at OpenSearchCon rather than as a production service, and the remaining work is deepening each pillar and tightening the low confidence behavior so the system stays honest when it is unsure rather than guessing.",
+    "url": "https://intent-context-cognition-brown.vercel.app/",
+    "tags": ["results", "demo", "generative-discovery"]
   },
   {
     "id": "scenefinder-purpose-01",
