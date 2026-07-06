@@ -227,22 +227,26 @@ export const projectTags = Array.from(
 export type Talk = {
   title: string;
   venue: string; // venue + date
-  takeaway: string; // one line
-  href?: string; // slides
+  takeaway: string; // brief on what the talk is
+  href?: string; // primary link (session page or live demo)
+  video?: string; // recorded talk
 };
 
 export const talks: Talk[] = [
   {
-    title: "Tool routing for grounded retrieval without a framework",
-    venue: "OpenSearchCon India 2026",
-    takeaway: "Tool routing because the corpus spans domains; framework-free because the SDK was enough.",
-    href: "#",
+    title: "Generative Discovery on OpenSearch: Intent, Context, Cognition",
+    venue: "OpenSearchCon India 2026 · June 15, 2026",
+    takeaway:
+      "Search finds; discovery reveals. Generative Discovery treats every interaction as a signal of intent, builds context across modalities with session aware RAG on OpenSearch, and applies cognition so agents surface what users did not know to ask for, all at 2000+ requests per second.",
+    href: "https://opensearchconin2026.sched.com/event/2KF73/generative-discovery-on-opensearch-intent-context-cognition-rajani-maski-shutterstock",
   },
   {
-    title: "From learning-to-rank to agentic retrieval",
-    venue: "Optimized AI Conference 2026, Atlanta",
-    takeaway: "What classical IR still teaches the agentic era about relevance.",
-    href: "#",
+    title: "From Boolean Search to Agentic Generative Discovery",
+    venue: "Orchestrating 25 years of IR innovation",
+    takeaway:
+      "Twenty five years of IR folded into modern agentic systems: agents decide when to use BM25 for exact matches, embeddings for semantic recall, cross encoders for precision, and CLIP for visual search. Lexical foundations, multimodal retrieval, and hybrid fusion, built for Shutterstock's media library.",
+    href: "https://intent-context-cognition-brown.vercel.app/",
+    video: "https://youtu.be/LP59ugyd0vQ",
   },
 ];
 
@@ -254,23 +258,29 @@ export type Writing = {
 
 export const writing: Writing[] = [
   {
-    title: "Why I keep retrieval framework-free",
-    takeaway: "The SDK tool API is sufficient; the framework is the liability.",
-    href: "#",
-  },
-  {
-    title: "Grounding evals you can actually run",
-    takeaway: "A small hand-rolled harness beats a hosted black box for a static corpus.",
-    href: "#",
+    title: "Writing and posts on LinkedIn",
+    takeaway:
+      "Short notes and articles on retrieval, ranking, agentic systems, and keeping the stack framework free. Latest activity and long form posts.",
+    href: "https://www.linkedin.com/in/rajanimaski/recent-activity/all/",
   },
 ];
 
-// Named certs only. No course enumeration (those live in the resume + RAG corpus).
-export const certifications: string[] = [
-  "AWS GenAI Professional",
-  "NVIDIA NCP-AAI",
-  "NVIDIA NCA-AIIO",
+export type Certification = {
+  name: string;
+  status?: "in progress";
+};
+
+// Named certs plus the DeepLearning.AI body of work. In-progress credentials
+// are marked, not hidden. Full list lives on LinkedIn (certsLink).
+export const certifications: Certification[] = [
+  { name: "AWS GenAI Professional" },
+  { name: "40+ DeepLearning.AI courses: Agentic, Voice, Generative AI" },
+  { name: "NVIDIA NCP-AAI", status: "in progress" },
+  { name: "NVIDIA NCA-AIIO", status: "in progress" },
 ];
+
+export const certsLink =
+  "https://www.linkedin.com/in/rajanimaski/details/certifications/";
 
 /* ---------------------------------------------------------------------------
    /about  — three short blocks, humanizing

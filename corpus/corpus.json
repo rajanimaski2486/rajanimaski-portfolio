@@ -191,47 +191,47 @@
   {
     "id": "talk-opensearchcon-01",
     "source_type": "talks",
-    "title": "Tool routing for grounded retrieval without a framework",
+    "title": "Generative Discovery on OpenSearch: Intent, Context, Cognition",
     "section": "takeaway",
-    "text": "At OpenSearchCon India 2026 I argue for SDK native tool routing over orchestration frameworks for grounded retrieval. The core claim is that tool routing earns its place when the corpus spans distinct domains, because the model genuinely has to choose where to look, but that the framework around it often does not earn its place at small and medium scale. The interview line is: tool routing because the corpus spans distinct domains, kept framework free because the SDK tool API was sufficient.",
-    "url": "#",
-    "tags": ["OpenSearchCon", "tool-routing", "framework-free"]
+    "text": "At OpenSearchCon India 2026 I give a talk titled Generative Discovery on OpenSearch: Intent, Context, Cognition. The premise is that search finds but discovery reveals, and at Shutterstock, serving one of the world's largest licensed creative libraries at 2000+ requests per second, that difference is everything. Generative Discovery changes the contract: it treats every interaction as a signal of intent, builds context across modalities, and applies cognition to surface what users did not know to ask for. The talk covers three principles. Intent means unifying multimodal signals into rich representations. Context means session aware RAG pipelines built on OpenSearch. Cognition means generative agents that treat OpenSearch as an intelligent reasoning substrate rather than a passive index. It draws on production decisions and lessons from building generative discovery systems.",
+    "url": "https://opensearchconin2026.sched.com/event/2KF73/generative-discovery-on-opensearch-intent-context-cognition-rajani-maski-shutterstock",
+    "tags": ["OpenSearchCon", "generative-discovery", "OpenSearch", "multimodal", "RAG"]
   },
   {
     "id": "talk-optimizedai-01",
     "source_type": "talks",
-    "title": "From learning to rank to agentic retrieval",
+    "title": "From Boolean Search to Agentic Generative Discovery",
     "section": "takeaway",
-    "text": "At the Optimized AI Conference 2026 in Atlanta I trace what classical learning to rank still teaches the agentic era. The takeaway is that relevance, evaluation discipline, and latency budgets did not go away when language models arrived; they became more important, because a confident wrong answer is worse than a slow one. The talk connects the old offline relevance harness to the modern grounding eval as the same idea in new clothing.",
-    "url": "#",
-    "tags": ["OptimizedAI", "learning-to-rank", "evaluation"]
+    "text": "In From Boolean Search to Agentic Generative Discovery: Orchestrating 25 Years of IR Innovation, I trace how modern agentic systems fold classical information retrieval into contemporary AI. Drawing on building search infrastructure for Shutterstock's media library, I show how agents decide when to use BM25 for exact matches, embeddings for semantic recall, cross encoders for precision, and CLIP for visual search. The talk covers lexical search foundations, the evolution to multimodal retrieval, hybrid fusion strategies, and practical agent orchestration patterns that combine keyword and semantic approaches. A recorded version is on YouTube, and the companion demo is the Intent, Context, Cognition app.",
+    "url": "https://youtu.be/LP59ugyd0vQ",
+    "tags": ["agentic", "BM25", "CLIP", "hybrid-retrieval", "IR"]
   },
   {
     "id": "writing-framework-free-01",
     "source_type": "talks",
-    "title": "Why I keep retrieval framework free",
+    "title": "Writing and posts on LinkedIn",
     "section": "takeaway",
-    "text": "In my writing I make the case that for a static or slowly changing corpus, the SDK tool API is sufficient and an orchestration framework is mostly liability: another dependency, another debugging surface, another version treadmill. Framework free is not a rejection of frameworks everywhere; it is a deliberate position for the cases where routing and evaluation are simple enough to own directly. There is a separate comparative project where the framework choice is the point.",
-    "url": "#",
-    "tags": ["framework-free", "writing"]
+    "text": "My writing lives on LinkedIn as short notes and longer posts on retrieval, ranking, agentic systems, and keeping the stack framework free. A recurring theme is that for a static or slowly changing corpus the SDK tool API is sufficient and an orchestration framework is mostly liability: another dependency, another debugging surface, another version treadmill. Framework free is a deliberate position for the cases where routing and evaluation are simple enough to own directly, not a rejection of frameworks everywhere. The latest activity and articles are on my LinkedIn recent activity feed.",
+    "url": "https://www.linkedin.com/in/rajanimaski/recent-activity/all/",
+    "tags": ["framework-free", "writing", "LinkedIn"]
   },
   {
     "id": "courses-llm-rag-01",
     "source_type": "courses",
     "title": "Courses and continuing education",
     "section": "summary",
-    "text": "I have completed more than forty courses across large language models, retrieval augmented generation, and agentic systems, alongside foundations in machine learning and information retrieval. Rather than list every course, the summary is the shape of the study: deep on retrieval and ranking, broad on the modern LLM stack, and hands on with the providers I actually build against. The detail lives here in the corpus; the resume carries one summarizing line.",
-    "url": "",
-    "tags": ["courses", "LLM", "RAG", "agentic"]
+    "text": "I have completed more than forty DeepLearning.AI courses spanning agentic systems, voice, and generative AI, alongside large language models, retrieval augmented generation, transformers, LLMOps, and foundations in machine learning and information retrieval. Rather than list every course, the summary is the shape of the study: deep on retrieval and ranking, broad on the modern LLM stack, and hands on with the providers I actually build against. The full certificate list is on my LinkedIn certifications page; the resume carries one summarizing line.",
+    "url": "https://www.linkedin.com/in/rajanimaski/details/certifications/",
+    "tags": ["courses", "DeepLearning.AI", "agentic", "voice", "generative"]
   },
   {
     "id": "certs-01",
     "source_type": "courses",
     "title": "Certifications",
     "section": "summary",
-    "text": "My named certifications include AWS GenAI Professional and the NVIDIA NCP-AAI and NCA-AIIO credentials in agentic AI and AI infrastructure. I list only named certifications that are earned, not in progress coursework. The NVIDIA credentials reflect a deliberate focus on agentic AI and the infrastructure to serve it.",
-    "url": "",
-    "tags": ["AWS", "NVIDIA", "certifications"]
+    "text": "My earned certification is AWS GenAI Professional, alongside 40+ DeepLearning.AI courses concentrated in agentic AI, voice, and generative AI. I am currently progressing toward two NVIDIA credentials, NCP-AAI and NCA-AIIO, in agentic AI and AI infrastructure; those are in progress rather than earned. The mix reflects a deliberate focus on agentic AI and the infrastructure to serve it. The full certificate list is on my LinkedIn certifications page.",
+    "url": "https://www.linkedin.com/in/rajanimaski/details/certifications/",
+    "tags": ["AWS", "NVIDIA", "DeepLearning.AI", "certifications", "in-progress"]
   },
   {
     "id": "about-running-01",

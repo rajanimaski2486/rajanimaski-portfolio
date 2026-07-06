@@ -1,7 +1,7 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Play } from "lucide-react";
 import { PageFrame } from "@/components/page-frame";
 import { InlineInvite } from "@/components/inline-invite";
-import { talks, writing, certifications } from "@/lib/content";
+import { talks, writing, certifications, certsLink } from "@/lib/content";
 
 export const metadata = { title: "Talks & writing · Rajani Maski" };
 
@@ -27,7 +27,7 @@ export default function TalksPage() {
                     href={t.href}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="Slides"
+                    aria-label="Open talk"
                     className="shrink-0 text-accent"
                   >
                     <ArrowUpRight className="h-4 w-4" />
@@ -38,6 +38,17 @@ export default function TalksPage() {
               <p className="mt-1.5 text-[12.5px] leading-snug text-secondary">
                 {t.takeaway}
               </p>
+              {t.video ? (
+                <a
+                  href={t.video}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 font-meta text-[11px] text-accent"
+                >
+                  <Play className="h-3 w-3" />
+                  Watch the talk
+                </a>
+              ) : null}
             </li>
           ))}
         </ul>
@@ -71,18 +82,32 @@ export default function TalksPage() {
         </ul>
       </section>
 
-      {/* Certifications strip — named certs only, one row. */}
+      {/* Certifications strip — named certs + the DeepLearning.AI body of work. */}
       <section className="mt-8">
-        <h2 className="font-meta text-[11px] uppercase tracking-[0.2em] text-tertiary">
-          Certifications
-        </h2>
+        <div className="flex items-baseline justify-between gap-3">
+          <h2 className="font-meta text-[11px] uppercase tracking-[0.2em] text-tertiary">
+            Certifications
+          </h2>
+          <a
+            href={certsLink}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 font-meta text-[11px] text-accent"
+          >
+            View all
+            <ArrowUpRight className="h-3 w-3" />
+          </a>
+        </div>
         <ul className="mt-3 flex flex-wrap gap-2">
           {certifications.map((c) => (
             <li
-              key={c}
+              key={c.name}
               className="rounded-full border px-2.5 py-1 font-meta text-[11px] text-secondary"
             >
-              {c}
+              {c.name}
+              {c.status ? (
+                <span className="ml-1.5 text-tertiary">· {c.status}</span>
+              ) : null}
             </li>
           ))}
         </ul>
