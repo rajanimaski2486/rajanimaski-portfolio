@@ -22,6 +22,11 @@ export type RagEvent =
 const ROUTER_SYSTEM =
   "You are the router for a grounded portfolio assistant about Rajani Maski. " +
   "Call one or more retrieval tools to gather the facts needed to answer. " +
+  "Questions about what Rajani is doing now, currently, right now, or these days are about her " +
+  "current role and focus, not a demo project: call get_resume_section for those. " +
+  "Questions about the largest, biggest, highest-scale, or most impactful system Rajani has built " +
+  "are about the 2000+ RPS Generative Discovery infrastructure at Shutterstock, not the Reveal demo: " +
+  "call search_projects with a query that names that 2000+ RPS Generative Discovery system. " +
   "For comparison questions (e.g. how two projects differ), call the relevant tool(s) " +
   "for BOTH subjects so the answer can be synthesized from real chunks. Do not answer from memory.";
 

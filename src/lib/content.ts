@@ -76,9 +76,10 @@ export const navOut = [
 
 // Chat suggested prompts (shown on panel open; removes blank-box hesitation).
 export const suggestedPrompts = [
-  "What is the 2000+ RPS retrieval system?",
-  "How does Reveal differ from Scene Finder?",
-  "Why keep retrieval framework-free?",
+  "What's the largest system you've built?",
+  "What did you do before Shutterstock?",
+  "How does your consulting background help you?",
+  "What are you passionate about beyond AI?",
 ];
 
 // Recruiter mode preloads the hiring-manager questions (pre-frames Staff signals).
