@@ -18,7 +18,7 @@ const mono = localFont({
 export const metadata: Metadata = {
   title: "Rajani Maski · Staff / Principal AI engineer",
   description:
-    "15+ years from classical IR to modern AI: model training, relevance ranking, learning-to-rank, retrieval at 2000+ RPS, and agentic + multimodal systems.",
+    "17+ years from classical IR to modern AI: model training, relevance ranking, learning-to-rank, retrieval at 2000+ RPS, and agentic + multimodal systems.",
 };
 
 export default function RootLayout({
