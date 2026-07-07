@@ -19,7 +19,7 @@ export const site = {
 // Current role + prior background (mono lines under the headline).
 export const roleNow = {
   employer: "Shutterstock",
-  focus: "multimodal Discovery",
+  focus: "Multimodal Generative Discovery",
   tenure: "4 yrs",
 };
 export const rolePrior =
@@ -27,7 +27,7 @@ export const rolePrior =
 
 // Positioning statement under the headline.
 export const positioning =
-  "17+ years spanning classical IR to modern AI: model training, relevance ranking, learning-to-rank, and production retrieval serving 2,000+ RPS. Now building agentic and multimodal systems for generative discovery, ranking, and media content generation.";
+  "17+ years spanning the evolution from classical IR and relevance engineering to modern AI-driven discovery.";
 
 // Mono, bordered chips (spec order).
 export const skillChips = [
