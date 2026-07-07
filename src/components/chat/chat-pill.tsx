@@ -5,7 +5,7 @@ import { Mic } from "lucide-react";
 
 /*
   Docked pill, bottom-right, collapsed by default. Accent border, green status
-  dot, "Ask me anything", mic icon. One-time attention: ~1.2s after load it
+  dot, "Ask about my work and interests", mic icon. One-time attention: ~1.2s after load it
   double-pulses (2 iterations, finite) then settles. It NEVER loops.
 */
 export function ChatPill({ onClick }: { onClick: () => void }) {
@@ -22,7 +22,7 @@ export function ChatPill({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      aria-label="Ask me anything"
+      aria-label="Ask about my work and interests"
       title="Open chat"
       style={{ borderColor: "rgba(93,204,165,0.4)" }}
       className={`fixed bottom-5 right-5 z-40 flex items-center gap-2.5 rounded-[22px] border bg-panel px-4 py-2.5 text-[13px] text-primary shadow-lg transition-colors hover:border-accent/70 ${
@@ -33,7 +33,7 @@ export function ChatPill({ onClick }: { onClick: () => void }) {
         <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
       </span>
-      <span>Ask me anything</span>
+      <span>Ask about my work and interests</span>
       <Mic className="h-4 w-4 text-accent" />
     </button>
   );

@@ -250,7 +250,7 @@ export function ChatPanel({
       {/* Header */}
       <div className="flex items-center justify-between border-b px-4 py-3">
         <div>
-          <p className="text-[13px] font-medium text-primary">Ask me anything</p>
+          <p className="text-[13px] font-medium text-primary">Ask about my work and interests</p>
           <p className="font-meta text-[10px] text-tertiary">
             RAG with tool routing, grounded in a small corpus
           </p>

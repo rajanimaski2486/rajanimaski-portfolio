@@ -55,9 +55,9 @@ export default function Home() {
 
       {/* Calm scroll below the fold. */}
       <div className="mx-auto max-w-content space-y-10 px-6 pb-20 pt-4">
-        {/* Inline chat invite — hooked to the strongest claim (2000+ RPS). */}
-        <InlineInvite prompt="What is the 2000+ RPS retrieval system and how was it built?">
-          Ask about the <span className="text-accent">2000+ RPS</span> system
+        {/* Inline chat invite — hooked to the current work below. */}
+        <InlineInvite prompt="What are you working on right now?">
+          Ask about my <span className="text-accent">current work</span>
         </InlineInvite>
 
         <CurrentWork />
