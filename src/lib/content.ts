@@ -261,7 +261,7 @@ export const writing: Writing[] = [
   {
     title: "Writing and posts on LinkedIn",
     takeaway:
-      "Short notes and articles on retrieval, ranking, agentic systems, and keeping the stack framework free. Latest activity and long form posts.",
+      "Short notes and articles on modern generative AI, retrieval, ranking, agentic systems, and Robotics. Latest activity and long form posts.",
     href: "https://www.linkedin.com/in/rajanimaski/recent-activity/all/",
   },
 ];
