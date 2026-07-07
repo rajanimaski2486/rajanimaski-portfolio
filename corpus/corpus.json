@@ -171,6 +171,15 @@
     "tags": ["staff", "principal", "NYC", "Shutterstock", "multimodal-generative", "consulting", "customer-facing"]
   },
   {
+    "id": "resume-education-01",
+    "source_type": "resume",
+    "title": "Education",
+    "section": "education",
+    "text": "I hold a Master of Science in Computer Science from San Francisco State University and a Bachelor of Engineering from Visvesvaraya Technological University. The graduate work in computer science is where my information retrieval and search foundations were formed, and it connects directly to the relevance ranking and retrieval systems that run through my career.",
+    "url": "",
+    "tags": ["education", "school", "degree", "university", "computer-science", "San Francisco State University", "Visvesvaraya Technological University"]
+  },
+  {
     "id": "resume-ir-era-01",
     "source_type": "resume",
     "title": "Classical IR and relevance ranking",
@@ -257,7 +266,7 @@
     "title": "AI for Autism",
     "section": "bio",
     "text": "AI for Autism is where my passion and personal journey meet. As the mother of an autistic son, I have spent years learning, advocating, and supporting his growth in communication and confidence. This journey inspires me to explore how AI can provide practical, evidence informed support for autistic children and their families. It also shapes how I think about access and design in everything else I build, because a system that only works for the median user is not actually finished. I would be happy to connect and share experiences, and I share more on my YouTube channel.",
-    "url": "https://www.youtube.com/@rajanimaski6873",
+    "url": "https://www.youtube.com/playlist?list=PLODD7Ooke9w4",
     "tags": ["autism", "AI for autism", "advocacy", "personal", "YouTube"]
   },
   {

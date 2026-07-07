@@ -310,6 +310,6 @@ export const about: AboutBlock[] = [
   {
     title: "AI for Autism",
     body: "AI for Autism is where my passion and personal journey meet. As the mother of an autistic son, I have spent years learning, advocating, and supporting his growth in communication and confidence. This journey inspires me to explore how AI can provide practical, evidence informed support for autistic children and their families. I would be happy to connect and share experiences.",
-    link: { label: "Watch on YouTube", href: "https://www.youtube.com/@rajanimaski6873" },
+    link: { label: "Watch on YouTube", href: "https://www.youtube.com/playlist?list=PLODD7Ooke9w4" },
   },
 ];
