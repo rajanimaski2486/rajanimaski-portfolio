@@ -296,7 +296,7 @@ export type AboutBlock = {
 export const about: AboutBlock[] = [
   {
     title: "Running",
-    body: "Long, steady mileage. The same patience that retrieval work rewards: show up, log the distance, let the curve bend over months not days.",
+    body: "🏃 Running is my happy place. Always up for a marathon or the next challenge. Nothing beats the runner's high, a clear mind, and the feeling of crossing the finish line. Reward me with a cold beer 🍺 and a slice (or three) of pizza 🍕, and that is pretty much a perfect day.",
     link: { label: "Follow me on Strava", href: "https://strava.app.link/qKkdST7cz4b" },
   },
   {
