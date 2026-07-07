@@ -301,7 +301,7 @@ export const about: AboutBlock[] = [
   },
   {
     title: "Hiking",
-    body: "Weekends on trail, often with elevation as the only metric that matters. A reset from screens and a reminder that good systems, like good routes, are mostly preparation.",
+    body: "Weekends on the trail with family and friends are my favorite way to recharge. The combination of fresh air, mountain views, cool breezes, and peaceful trails surrounded by trees and water brings joy and connection, and keeps the oxytocin flowing.",
     link: {
       label: "Follow me on AllTrails",
       href: "https://www.alltrails.com/members/rajani-maski",
@@ -309,7 +309,7 @@ export const about: AboutBlock[] = [
   },
   {
     title: "Autism advocacy",
-    body: "Supporting autistic children and their families is work close to my heart. As the mother of an autistic son, I have spent the past years learning, advocating, and helping him grow from being barely verbal to expressing himself with increasing confidence. This journey has inspired me to support other families with practical guidance, compassion, and evidence informed resources to help autistic children develop their strengths and navigate a world that is often designed for neurotypical individuals. If you would like to talk about autism or share experiences, I would be happy to connect.",
+    body: "AI for Autism is where my passion and personal journey meet. As the mother of an autistic son, I have spent years learning, advocating, and supporting his growth in communication and confidence. This journey inspires me to explore how AI can provide practical, evidence informed support for autistic children and their families. I would be happy to connect and share experiences.",
     link: { label: "Watch on YouTube", href: "https://www.youtube.com/@rajanimaski6873" },
   },
 ];
