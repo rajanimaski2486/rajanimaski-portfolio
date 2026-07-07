@@ -57,8 +57,7 @@ export default function Home() {
       <div className="mx-auto max-w-content space-y-10 px-6 pb-20 pt-4">
         {/* Inline chat invite — hooked to the strongest claim (2000+ RPS). */}
         <InlineInvite prompt="What is the 2000+ RPS retrieval system and how was it built?">
-          Curious about the <span className="text-accent">2000+ RPS</span> or any
-          project? Ask the agent, by chat or voice.
+          Ask about the <span className="text-accent">2000+ RPS</span> system
         </InlineInvite>
 
         <CurrentWork />

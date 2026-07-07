@@ -115,8 +115,7 @@ export default function TalksPage() {
 
       <div className="mt-8">
         <InlineInvite prompt="What is Generative Discovery, and what do Intent, Context, and Cognition mean?">
-          <span className="text-accent">Generative Discovery</span>. Ask the agent
-          about Intent, Context, and Cognition from the talks.
+          Ask about <span className="text-accent">Generative Discovery</span>
         </InlineInvite>
       </div>
     </PageFrame>
