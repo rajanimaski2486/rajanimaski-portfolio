@@ -287,19 +287,29 @@ export const certsLink =
    /about  — three short blocks, humanizing
 --------------------------------------------------------------------------- */
 
-export type AboutBlock = { title: string; body: string };
+export type AboutBlock = {
+  title: string;
+  body: string;
+  link?: { label: string; href: string };
+};
 
 export const about: AboutBlock[] = [
   {
     title: "Running",
     body: "Long, steady mileage. The same patience that retrieval work rewards: show up, log the distance, let the curve bend over months not days.",
+    link: { label: "Follow me on Strava", href: "https://strava.app.link/qKkdST7cz4b" },
   },
   {
     title: "Hiking",
     body: "Weekends on trail, often with elevation as the only metric that matters. A reset from screens and a reminder that good systems, like good routes, are mostly preparation.",
+    link: {
+      label: "Follow me on AllTrails",
+      href: "https://www.alltrails.com/members/rajani-maski",
+    },
   },
   {
     title: "Autism advocacy",
-    body: "Work close to my heart: supporting autistic people and their families, and pushing for environments that assume capability and accommodate difference. It informs how I think about access and design in everything else.",
+    body: "Supporting autistic children and their families is work close to my heart. As the mother of an autistic son, I have spent the past years learning, advocating, and helping him grow from being barely verbal to expressing himself with increasing confidence. This journey has inspired me to support other families with practical guidance, compassion, and evidence informed resources to help autistic children develop their strengths and navigate a world that is often designed for neurotypical individuals. If you would like to talk about autism or share experiences, I would be happy to connect.",
+    link: { label: "Watch on YouTube", href: "https://www.youtube.com/@rajanimaski6873" },
   },
 ];

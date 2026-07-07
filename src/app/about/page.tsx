@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { PageFrame } from "@/components/page-frame";
 import { InlineInvite } from "@/components/inline-invite";
 import { about } from "@/lib/content";
@@ -20,6 +21,17 @@ export default function AboutPage() {
             <p className="mt-2 max-w-[560px] text-[14px] leading-relaxed text-secondary">
               {block.body}
             </p>
+            {block.link ? (
+              <a
+                href={block.link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-flex items-center gap-1 font-meta text-[11px] text-accent transition-colors hover:text-accent/80"
+              >
+                {block.link.label}
+                <ArrowUpRight className="h-3 w-3" />
+              </a>
+            ) : null}
           </section>
         ))}
       </div>
