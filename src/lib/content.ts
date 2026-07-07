@@ -23,7 +23,7 @@ export const roleNow = {
   tenure: "4 yrs",
 };
 export const rolePrior =
-  "professional services consulting engineer, customer facing · 6 yrs · software engineering · 7 yrs";
+  "Professional Services Consulting Engineer, Customer Facing · 6 yrs · Software Engineering · 7 yrs";
 
 // Positioning statement under the headline.
 export const positioning =
