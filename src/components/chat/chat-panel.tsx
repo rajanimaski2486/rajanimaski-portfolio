@@ -342,7 +342,7 @@ export function ChatPanel({
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about a project, talk, or the 2000+ RPS claim"
+          placeholder="Ask about current work, projects, talks or interests"
           className="flex-1 rounded-md border bg-surface px-3 py-2 text-[13px] text-primary outline-none placeholder:text-tertiary focus:border-hover"
         />
         <button
