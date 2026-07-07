@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUp, Check, Mic, X } from "lucide-react";
 import { streamChat, type Citation } from "@/lib/chat-client";
-import { suggestedPrompts, recruiterPrompts } from "@/lib/content";
+import { suggestedPrompts } from "@/lib/content";
 import groundingEval from "@/lib/grounding-eval.json";
 import {
   createRecognition,
@@ -35,7 +35,6 @@ export function ChatPanel({
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
-  const [recruiter, setRecruiter] = useState(false);
   const [voiceMode, setVoiceMode] = useState(false);
   const [listening, setListening] = useState(false);
   const [supportsVoice, setSupportsVoice] = useState(false);
@@ -51,7 +50,7 @@ export function ChatPanel({
   const finalAnswerRef = useRef("");
   const recRef = useRef<ReturnType<typeof createRecognition>>(null);
 
-  const prompts = recruiter ? recruiterPrompts : suggestedPrompts;
+  const prompts = suggestedPrompts;
 
   useEffect(() => setSupportsVoice(voiceSupported()), []);
   useEffect(() => {
@@ -273,17 +272,6 @@ export function ChatPanel({
               <Mic className="h-3.5 w-3.5" />
             </button>
           )}
-          <button
-            type="button"
-            onClick={() => setRecruiter((v) => !v)}
-            aria-pressed={recruiter}
-            className={cn(
-              "rounded-full border px-2 py-1 font-meta text-[10px] transition-colors",
-              recruiter ? "border-accent/50 text-accent" : "text-secondary hover:border-hover"
-            )}
-          >
-            recruiter mode
-          </button>
           <button
             type="button"
             onClick={onClose}

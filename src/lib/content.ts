@@ -82,13 +82,6 @@ export const suggestedPrompts = [
   "What are you passionate about beyond AI?",
 ];
 
-// Recruiter mode preloads the hiring-manager questions (pre-frames Staff signals).
-export const recruiterPrompts = [
-  "What is the scope and impact of your work?",
-  "What was the hardest technical decision you made?",
-  "What would you do differently?",
-];
-
 /* ---------------------------------------------------------------------------
    /projects
    One filterable grid, active + past together. Compact mono tech strip per tile.
