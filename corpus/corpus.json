@@ -238,27 +238,27 @@
     "source_type": "about",
     "title": "Running",
     "section": "bio",
-    "text": "Outside work I run. The appeal is the same patience that retrieval work rewards: you show up, you log the distance, and the improvement arrives over months rather than days. Long steady mileage is my reset and my proof that compounding effort beats intensity.",
-    "url": "",
-    "tags": ["running", "personal"]
+    "text": "Outside work I run. The appeal is the same patience that retrieval work rewards: you show up, you log the distance, and the improvement arrives over months rather than days. Long steady mileage is my reset and my proof that compounding effort beats intensity. You can follow me on Strava.",
+    "url": "https://strava.app.link/qKkdST7cz4b",
+    "tags": ["running", "personal", "Strava"]
   },
   {
     "id": "about-hiking-01",
     "source_type": "about",
     "title": "Hiking",
     "section": "bio",
-    "text": "I hike on weekends, often where elevation is the only metric that matters. It is a reset from screens and a reminder that good systems, like good routes, are mostly preparation. The planning is the work; the trail is the payoff.",
-    "url": "",
-    "tags": ["hiking", "personal"]
+    "text": "I hike on weekends, often where elevation is the only metric that matters. It is a reset from screens and a reminder that good systems, like good routes, are mostly preparation. The planning is the work; the trail is the payoff. You can follow me on AllTrails.",
+    "url": "https://www.alltrails.com/members/rajani-maski",
+    "tags": ["hiking", "personal", "AllTrails"]
   },
   {
     "id": "about-autism-01",
     "source_type": "about",
     "title": "Autism advocacy",
     "section": "bio",
-    "text": "Autism advocacy is work close to my heart. I support autistic people and their families and push for environments that assume capability and accommodate difference rather than the reverse. It shapes how I think about access and design in everything else I build, because a system that only works for the median user is not actually finished.",
-    "url": "",
-    "tags": ["autism", "advocacy", "personal"]
+    "text": "Supporting autistic children and their families is work close to my heart. As the mother of an autistic son, I have spent the past years learning, advocating, and helping him grow from being barely verbal to expressing himself with increasing confidence. This journey has inspired me to support other families with practical guidance, compassion, and evidence informed resources to help autistic children develop their strengths and navigate a world that is often designed for neurotypical individuals. It also shapes how I think about access and design in everything else I build, because a system that only works for the median user is not actually finished. If you would like to talk about autism or share experiences, I would be happy to connect, and I share more on my YouTube channel.",
+    "url": "https://www.youtube.com/@rajanimaski6873",
+    "tags": ["autism", "advocacy", "personal", "YouTube"]
   },
   {
     "id": "contact-01",
