@@ -1,5 +1,5 @@
 import { complete, streamComplete } from "./llm";
-import { isInScope } from "./guardrail";
+import { isInScope, skillProbe } from "./guardrail";
 import { tools, runTool, TOOL_NAMES, type ToolName } from "./tools";
 import type { Retrieved } from "./opensearch";
 import { LOW_CONFIDENCE_THRESHOLD, REFUSAL } from "./config";
@@ -125,8 +125,17 @@ export async function* ragStream(question: string): AsyncGenerator<RagEvent> {
   const top = merged.slice(0, 6);
 
   // 4. Low-confidence / empty-retrieval gate -> same fixed refusal. No fabrication.
+  // Exception: a skill probe ("do you know GCP") is a legitimate skills question
+  // even when the named tech is absent from the corpus, which makes cosine low.
+  // If we still retrieved a resume/skills chunk, answer from it -- the answer
+  // prompt states plainly that the tech is not listed and names the related
+  // tools she does use -- rather than firing the refusal on a real question.
   const bestCosine = top.reduce((m, c) => Math.max(m, c.score), 0);
-  if (top.length === 0 || bestCosine < LOW_CONFIDENCE_THRESHOLD) {
+  const hasSkillsChunk = top.some(
+    (c) => c.source_type === "resume" || c.source_type === "courses"
+  );
+  const lowConfidence = top.length === 0 || bestCosine < LOW_CONFIDENCE_THRESHOLD;
+  if (lowConfidence && !(skillProbe(question) && hasSkillsChunk)) {
     yield { type: "refusal", text: REFUSAL };
     return;
   }

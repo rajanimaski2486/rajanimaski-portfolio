@@ -97,7 +97,7 @@ function keywordInScope(question: string): boolean {
 const PROBE_SUBJECT = /\b(you|your|yours|yourself|rajani|she|her|hers)\b/i;
 const PROBE_VERB =
   /\b(know|knows|known|familiar|use|used|uses|using|worked?|experience|expert|proficient|skilled|built|build|done|do|tried|handle|heard\s+of|hands[-\s]?on)\b/i;
-function skillProbe(question: string): boolean {
+export function skillProbe(question: string): boolean {
   return PROBE_SUBJECT.test(question) && PROBE_VERB.test(question);
 }
 
