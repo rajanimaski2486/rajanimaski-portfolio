@@ -29,6 +29,9 @@ const ROUTER_SYSTEM =
   "Questions about the largest, biggest, highest-scale, or most impactful system Rajani has built " +
   "are about the 2000+ RPS Generative Discovery infrastructure at Shutterstock, not the Reveal demo: " +
   "call search_projects with a query that names that 2000+ RPS Generative Discovery system. " +
+  "Questions asking whether Rajani knows, has used, or is familiar with a specific technology, tool, " +
+  "cloud platform (for example GCP, AWS, Azure), or programming language are about her skills: " +
+  "call get_resume_section for those. " +
   "For comparison questions (e.g. how two projects differ), call the relevant tool(s) " +
   "for BOTH subjects so the answer can be synthesized from real chunks. Do not answer from memory.";
 

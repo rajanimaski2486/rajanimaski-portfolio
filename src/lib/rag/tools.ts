@@ -65,7 +65,7 @@ export const tools: ChatCompletionTool[] = [
     function: {
       name: "get_resume_section",
       description:
-        "Retrieve resume content by role or theme, plus courses and certifications detail. Use for what Rajani is working on now / currently / right now / these days, her current role, title, and focus at Shutterstock, where she is located / based / lives (New York, NY), her employment history and past companies with dates, career history, years of experience, core skills and tech stack, programming languages, and her NVIDIA and ML infrastructure experience.",
+        "Retrieve resume content by role or theme, plus courses and certifications detail. Use for what Rajani is working on now / currently / right now / these days, her current role, title, and focus at Shutterstock, where she is located / based / lives (New York, NY), her employment history and past companies with dates, career history, years of experience, core skills and tech stack, programming languages, and her NVIDIA and ML infrastructure experience. Also use this to answer whether Rajani knows, has used, or is familiar with a specific technology, tool, cloud platform (AWS, GCP, Azure), or programming language, since those are answered from her skills.",
       parameters: {
         type: "object",
         properties: { query: { type: "string" } },
