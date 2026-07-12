@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUp, Check, Mic, X } from "lucide-react";
 import { streamChat, type Citation } from "@/lib/chat-client";
+import { FeedbackTrigger } from "./feedback-modal";
 import { suggestedPrompts } from "@/lib/content";
 import groundingEval from "@/lib/grounding-eval.json";
 import {
@@ -27,10 +28,12 @@ export function ChatPanel({
   open,
   onClose,
   incoming,
+  onOpenFeedback,
 }: {
   open: boolean;
   onClose: () => void;
   incoming?: { text: string; nonce: number };
+  onOpenFeedback: () => void;
 }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -249,7 +252,7 @@ export function ChatPanel({
       {/* Header */}
       <div className="flex items-center justify-between border-b px-4 py-3">
         <div>
-          <p className="text-[13px] font-medium text-primary">Ask about my work and interests</p>
+          <p className="text-[13px] font-medium text-primary">Ask about Rajani&apos;s work and interests</p>
           <p className="font-meta text-[10px] text-tertiary">
             RAG with tool routing, grounded in a small corpus
           </p>
@@ -342,6 +345,11 @@ export function ChatPanel({
           <ArrowUp className="h-4 w-4" />
         </button>
       </form>
+
+      {/* Feedback affordance, separate from the chat message flow. */}
+      <div className="flex justify-center border-t px-4 py-2.5">
+        <FeedbackTrigger onClick={onOpenFeedback} />
+      </div>
     </aside>
   );
 }

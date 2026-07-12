@@ -198,6 +198,51 @@
     "tags": ["agentic", "multimodal", "generative", "RAG", "Shutterstock"]
   },
   {
+    "id": "resume-location-01",
+    "source_type": "resume",
+    "title": "Location",
+    "section": "contact",
+    "text": "Rajani is based in New York, NY, and works in the New York City metro area. Every one of her recent roles at Shutterstock, Redis, and Lucidworks has been New York based. When someone asks where Rajani is located, where she lives, or where she is based, the answer is New York, NY.",
+    "url": "",
+    "tags": ["location", "based", "New York", "NYC", "where", "located", "city"]
+  },
+  {
+    "id": "resume-current-title-01",
+    "source_type": "resume",
+    "title": "Current title and employer",
+    "section": "role",
+    "text": "Rajani's current title is Staff Software Engineer, AI at Shutterstock in New York, a role she has held since May 2022. She positions herself as a Staff and Principal level AI engineer focused on enterprise scale Generative AI platforms and applications. Her current focus is architecting and operating the Generative Discovery infrastructure that powers RAG style generative AI applications in production, combining dense vector retrieval, hybrid search, and metadata grounding at more than 2000 requests per second across hundreds of nodes.",
+    "url": "",
+    "tags": ["current-title", "Staff Software Engineer", "Shutterstock", "current-role", "job-title", "employer"]
+  },
+  {
+    "id": "resume-employment-history-01",
+    "source_type": "resume",
+    "title": "Employment history and companies",
+    "section": "experience",
+    "text": "Rajani's employment history, most recent first: Staff Software Engineer, AI at Shutterstock in New York from May 2022 to the present, architecting Generative Discovery retrieval at more than 2000 requests per second and leading the Solr to OpenSearch migration. Professional Services Consulting Engineer at Redis in New York from December 2020 to May 2022, designing and deploying vector similarity search systems and knowledge graphs for banking customers. Senior Search Consultant at Lucidworks in New York from June 2018 to December 2020, architecting enterprise search on Fusion, Solr, and Spark with learning to rank. From 2009 to 2017 she held progressive software engineering and search roles across India and the USA, including Search Consultant at Lucidworks India, Senior Software Engineer at Target.com India, Senior Java Programmer at Happiest Minds, Search Consultant at Sony India, Software Engineer at PointCross Life Sciences, and Search Intern at Glassdoor USA. In total this is more than seventeen years of experience.",
+    "url": "",
+    "tags": ["employment-history", "companies", "Shutterstock", "Redis", "Lucidworks", "Target", "Happiest Minds", "Sony", "PointCross", "Glassdoor", "work-history", "prior-roles"]
+  },
+  {
+    "id": "resume-skills-01",
+    "source_type": "resume",
+    "title": "Core skills and tech stack",
+    "section": "skills",
+    "text": "Rajani's core skills span three areas. AI Platform and Applications: RAG pipelines, agentic systems, multimodal AI, vector search, embeddings, prompt engineering, and LLMOps. Platform Engineering and Reliability: distributed systems, cloud native architecture, CI and CD, observability, performance optimization, Kubernetes, Terraform, and AWS. Her programming languages are Python, Java, Scala, and Bash, and she works extensively with OpenSearch. The through line is retrieval and ranking at production scale with strong operational rigor around testing, observability, incident response, and performance.",
+    "url": "",
+    "tags": ["skills", "tech-stack", "languages", "Python", "Java", "Scala", "Kubernetes", "Terraform", "AWS", "RAG", "LLMOps"]
+  },
+  {
+    "id": "resume-nvidia-infra-01",
+    "source_type": "resume",
+    "title": "NVIDIA and ML infrastructure experience",
+    "section": "skills",
+    "text": "Rajani has hands on experience with the NVIDIA and ML infrastructure stack: NVIDIA NIM, NVIDIA NeMo, NeMo Retriever, Triton Inference Server, TensorRT-LLM, and cuVS and RAPIDS. She also works with AWS Bedrock, MLflow, and SageMaker for model lifecycle management, and she built multimodal embedding pipelines for images and text on MLflow and SageMaker. Her portfolio and production systems use NVIDIA NIM as the primary model provider for both embeddings and generation.",
+    "url": "",
+    "tags": ["NVIDIA", "NIM", "NeMo", "NeMo Retriever", "Triton", "TensorRT-LLM", "cuVS", "RAPIDS", "SageMaker", "MLflow", "Bedrock", "ML-infrastructure"]
+  },
+  {
     "id": "talk-opensearchcon-01",
     "source_type": "talks",
     "title": "Generative Discovery on OpenSearch: Intent, Context, Cognition",

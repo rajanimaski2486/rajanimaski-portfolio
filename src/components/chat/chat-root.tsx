@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ChatPill } from "./chat-pill";
 import { ChatPanel } from "./chat-panel";
+import { FeedbackModal } from "./feedback-modal";
 import { onOpenChat } from "@/lib/chat-bus";
 
 /*
@@ -12,6 +13,7 @@ import { onOpenChat } from "@/lib/chat-bus";
 */
 export function ChatRoot() {
   const [open, setOpen] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [incoming, setIncoming] = useState<{ text: string; nonce: number }>();
 
   useEffect(() => {
@@ -24,7 +26,13 @@ export function ChatRoot() {
   return (
     <>
       {!open && <ChatPill onClick={() => setOpen(true)} />}
-      <ChatPanel open={open} onClose={() => setOpen(false)} incoming={incoming} />
+      <ChatPanel
+        open={open}
+        onClose={() => setOpen(false)}
+        incoming={incoming}
+        onOpenFeedback={() => setFeedbackOpen(true)}
+      />
+      <FeedbackModal open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
     </>
   );
 }

@@ -65,7 +65,7 @@ export const tools: ChatCompletionTool[] = [
     function: {
       name: "get_resume_section",
       description:
-        "Retrieve resume content by role or theme, plus courses and certifications detail. Use for what Rajani is working on now / currently / right now / these days, her current role and focus at Shutterstock, career history, years of experience, and skills.",
+        "Retrieve resume content by role or theme, plus courses and certifications detail. Use for what Rajani is working on now / currently / right now / these days, her current role, title, and focus at Shutterstock, where she is located / based / lives (New York, NY), her employment history and past companies with dates, career history, years of experience, core skills and tech stack, programming languages, and her NVIDIA and ML infrastructure experience.",
       parameters: {
         type: "object",
         properties: { query: { type: "string" } },

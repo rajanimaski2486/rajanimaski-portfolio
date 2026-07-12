@@ -44,6 +44,36 @@ Use these in order. Each assumes PORTFOLIO_SPEC.md is in the repo root and reada
 
 > Add voice to the existing chat panel using the browser Web Speech API. A mic toggle in the panel header switches to voice mode: speech-to-text feeds the same Day 3 endpoint, and text-to-speech reads the grounded answer back. Same agent, no new endpoint. Then do a polish pass: mobile layout (portrait stacks and centers, canvas freezes, panel goes full-width), prefers-reduced-motion (canvas static), spacing and type consistency against the tokens, and a Lighthouse check. Deploy final.
 
+## Maintenance: extract standard resume facts into the corpus
+
+Run this when the chat cannot answer a standard recruiter question (location,
+current title, employment history, skills) that the resume plainly states. It
+turns the resume PDF into new `corpus/corpus.json` chunks and was used to add the
+`resume-location-01`, `resume-current-title-01`, `resume-employment-history-01`,
+`resume-skills-01`, and `resume-nvidia-infra-01` chunks after "where is Rajani
+located" returned "I do not know."
+
+> I am attaching Rajani's resume PDF. The grounded chat could not answer a
+> standard recruiter question ("where is Rajani located") even though the answer
+> is on the resume. This is a retrieval gap: the corpus has no chunk stating that
+> fact. Read `corpus/corpus.json`, `src/lib/rag/tools.ts`, and
+> `src/lib/rag/guardrail.ts` first so new content is actually retrievable and in
+> scope. Then extract the important, standard, commonly asked recruiter facts from
+> the resume — location, current title and employer, employment history with
+> companies and dates, years of experience, core skills and languages, NVIDIA and
+> ML infrastructure experience, education, and certifications — and, for anything
+> not already covered by an existing chunk, add a new chunk to `corpus/corpus.json`.
+> Rules: use `source_type: "resume"` so `get_resume_section` retrieves it; write
+> in the first person to match the existing resume chunks; ground every sentence in
+> the resume and invent nothing (no work-authorization, relocation, remote, or
+> phone claims the resume does not state); give each chunk a unique kebab-case id,
+> a section, and specific tags including the literal words a recruiter would use
+> (located, based, where, city). Then add the location and skills keywords to the
+> guardrail keyword list and mention location/skills/employment in the
+> `get_resume_section` tool description so routing and the scope gate pick these up.
+> Re-index with `python scripts/index_corpus.py --recreate` and confirm the failing
+> question now answers correctly.
+
 ## If time compresses
 
 Cut in this order: voice, then recruiter-mode toggle, then degrade citation chips to plain "source: name" text. Never cut grounding. Never cut the Day 1 static landing + resume PDF.

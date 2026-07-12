@@ -93,7 +93,7 @@ flowchart TB
   end
 
   subgraph INGEST["Ingestion · offline, one-time"]
-    CORPUS["corpus/corpus.json<br/>25 hand-authored chunks"]
+    CORPUS["corpus/corpus.json<br/>36 hand-authored chunks"]
     INDEXER["scripts/index_corpus.py<br/>create index · embed · bulk load"]
     CORPUS --> INDEXER
   end
