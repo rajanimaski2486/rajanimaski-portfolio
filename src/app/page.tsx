@@ -70,7 +70,7 @@ export default function Home() {
               <Link
                 key={n.href}
                 href={n.href}
-                className="text-secondary transition-colors hover:text-accent"
+                className="text-[15px] text-secondary transition-colors hover:text-accent"
               >
                 {n.label} →
               </Link>

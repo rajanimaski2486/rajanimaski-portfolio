@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { currentWork } from "@/lib/content";
@@ -31,12 +30,6 @@ export function CurrentWork() {
           </a>
         ))}
       </div>
-      <Link
-        href="/projects"
-        className="mt-3 inline-flex items-center gap-1 font-meta text-[12px] text-secondary transition-colors hover:text-accent"
-      >
-        all projects →
-      </Link>
     </section>
   );
 }
