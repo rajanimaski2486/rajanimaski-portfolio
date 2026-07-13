@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Check, MessageSquarePlus, X } from "lucide-react";
+import { openFeedback } from "@/lib/chat-bus";
+import { cn } from "@/lib/utils";
 
 // Mirrors the server cap; the server is the source of truth.
 const MAX_WORDS = 100;
@@ -13,15 +15,19 @@ const wordCount = (text: string) => {
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-// Small trigger, meant for the chat panel footer. Opening the modal is lifted to
-// the root so its backdrop covers the viewport (the sliding panel uses a CSS
-// transform, which would otherwise trap a fixed-position child inside it).
-export function FeedbackTrigger({ onClick }: { onClick: () => void }) {
+// Reusable trigger (chat panel footer and page footer). It only signals via the
+// bus; the modal itself is lifted to the root so its backdrop covers the
+// viewport (the sliding chat panel uses a CSS transform, which would otherwise
+// trap a fixed-position child inside it).
+export function FeedbackTrigger({ className }: { className?: string }) {
   return (
     <button
       type="button"
-      onClick={onClick}
-      className="flex items-center gap-1.5 font-meta text-[11px] text-tertiary transition-colors hover:text-secondary"
+      onClick={() => openFeedback()}
+      className={cn(
+        "flex items-center gap-1.5 font-meta text-[11px] text-tertiary transition-colors hover:text-secondary",
+        className
+      )}
     >
       <MessageSquarePlus className="h-3.5 w-3.5" />
       Share feedback

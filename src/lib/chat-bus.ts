@@ -18,3 +18,20 @@ export function onOpenChat(handler: (detail: OpenChatDetail) => void) {
   window.addEventListener(OPEN_CHAT_EVENT, listener);
   return () => window.removeEventListener(OPEN_CHAT_EVENT, listener);
 }
+
+/*
+  Decoupled open-feedback signal, same pattern. The feedback trigger (in the
+  chat panel and the page footer) calls openFeedback(); the global feedback
+  modal (mounted in ChatRoot) subscribes.
+*/
+export const OPEN_FEEDBACK_EVENT = "open-feedback";
+
+export function openFeedback() {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new Event(OPEN_FEEDBACK_EVENT));
+}
+
+export function onOpenFeedback(handler: () => void) {
+  window.addEventListener(OPEN_FEEDBACK_EVENT, handler);
+  return () => window.removeEventListener(OPEN_FEEDBACK_EVENT, handler);
+}

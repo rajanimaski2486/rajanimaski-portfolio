@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ChatPill } from "./chat-pill";
 import { ChatPanel } from "./chat-panel";
 import { FeedbackModal } from "./feedback-modal";
-import { onOpenChat } from "@/lib/chat-bus";
+import { onOpenChat, onOpenFeedback } from "@/lib/chat-bus";
 
 /*
   Global chat mount (in the root layout, so it lives on every page).
@@ -23,15 +23,12 @@ export function ChatRoot() {
     });
   }, []);
 
+  useEffect(() => onOpenFeedback(() => setFeedbackOpen(true)), []);
+
   return (
     <>
       {!open && <ChatPill onClick={() => setOpen(true)} />}
-      <ChatPanel
-        open={open}
-        onClose={() => setOpen(false)}
-        incoming={incoming}
-        onOpenFeedback={() => setFeedbackOpen(true)}
-      />
+      <ChatPanel open={open} onClose={() => setOpen(false)} incoming={incoming} />
       <FeedbackModal open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
     </>
   );

@@ -28,12 +28,10 @@ export function ChatPanel({
   open,
   onClose,
   incoming,
-  onOpenFeedback,
 }: {
   open: boolean;
   onClose: () => void;
   incoming?: { text: string; nonce: number };
-  onOpenFeedback: () => void;
 }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -348,7 +346,7 @@ export function ChatPanel({
 
       {/* Feedback affordance, separate from the chat message flow. */}
       <div className="flex justify-center border-t px-4 py-2.5">
-        <FeedbackTrigger onClick={onOpenFeedback} />
+        <FeedbackTrigger />
       </div>
     </aside>
   );

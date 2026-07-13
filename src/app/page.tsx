@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Portrait } from "@/components/portrait";
 import { CurrentWork } from "@/components/current-work";
 import { InlineInvite } from "@/components/inline-invite";
+import { FeedbackTrigger } from "@/components/chat/feedback-modal";
 import { positioning, navOut, site, roleNow, rolePrior } from "@/lib/content";
 
 export default function Home() {
@@ -63,17 +64,20 @@ export default function Home() {
         <CurrentWork />
 
         {/* Nav out + footer */}
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 border-t pt-6 font-meta text-[12px]">
-          {navOut.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="text-secondary transition-colors hover:text-accent"
-            >
-              {n.label} →
-            </Link>
-          ))}
-        </nav>
+        <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t pt-6 font-meta text-[12px]">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+            {navOut.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className="text-secondary transition-colors hover:text-accent"
+              >
+                {n.label} →
+              </Link>
+            ))}
+          </nav>
+          <FeedbackTrigger className="text-[12px] text-secondary hover:text-accent" />
+        </div>
       </div>
     </main>
   );
