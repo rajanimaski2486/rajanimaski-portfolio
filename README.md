@@ -66,6 +66,12 @@ OpenSearch as the retrieval layer, NeMo Retriever embedding NIM, NIM-primary
 generation with an OpenAI fallback, browser Web Speech for voice). It is RAG with
 SDK-native tool routing, not a ReAct agent.
 
+A single-page block view of the whole system is in [`docs/architecture.excalidraw`](docs/architecture.excalidraw)
+(open it in [Excalidraw](https://excalidraw.com) or the VS Code Excalidraw extension to edit),
+rendered below:
+
+![System architecture block diagram](docs/architecture.svg)
+
 ### 1. System architecture — the layers and what they are built with
 
 ```mermaid
