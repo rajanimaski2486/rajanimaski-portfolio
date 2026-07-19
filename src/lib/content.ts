@@ -62,8 +62,8 @@ export const currentWork: CurrentWork[] = [
   {
     name: "GridWatch",
     what: "Anomaly detection and ranking over operational telemetry.",
-    href: "https://github.com/rajanim/GridWatch",
-    deployed: false,
+    href: "https://youtu.be/zSUSf-1iJh8?si=UUctvKN9bjWkUx8j",
+    deployed: true,
   },
 ];
 
