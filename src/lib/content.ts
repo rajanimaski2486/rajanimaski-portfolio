@@ -225,6 +225,7 @@ export type Talk = {
   takeaway: string; // brief on what the talk is
   href?: string; // primary link (session page or live demo)
   video?: string; // recorded talk
+  embed?: string; // YouTube embed URL, rendered inline on /talks
 };
 
 export const talks: Talk[] = [
@@ -234,6 +235,8 @@ export const talks: Talk[] = [
     takeaway:
       "Search finds; discovery reveals. Generative Discovery treats every interaction as a signal of intent, builds context across modalities with session aware RAG on OpenSearch, and applies cognition so agents surface what users did not know to ask for, all at 2000+ requests per second.",
     href: "https://opensearchconin2026.sched.com/event/2KF73/generative-discovery-on-opensearch-intent-context-cognition-rajani-maski-shutterstock",
+    embed:
+      "https://www.youtube.com/embed/CxE2YHK1qh8?si=82g6KwBlF7NgFb6Z&start=107",
   },
   {
     title: "From Boolean Search to Agentic Generative Discovery",
@@ -241,7 +244,23 @@ export const talks: Talk[] = [
     takeaway:
       "Twenty five years of IR folded into modern agentic systems: agents decide when to use BM25 for exact matches, embeddings for semantic recall, cross encoders for precision, and CLIP for visual search. Lexical foundations, multimodal retrieval, and hybrid fusion, built for Shutterstock's media library.",
     href: "https://intent-context-cognition-brown.vercel.app/",
-    video: "https://youtu.be/LP59ugyd0vQ",
+    embed:
+      "https://www.youtube.com/embed/LP59ugyd0vQ?si=H8myGibavhgu4tn3&start=8",
+  },
+  {
+    title: "GridWatch App Demo",
+    venue: "Built for Spark Hack NYC 2026",
+    takeaway:
+      "Demo walkthrough of GridWatch, an app built for the Spark Hack NYC 2026 hackathon.",
+    embed: "https://www.youtube.com/embed/zSUSf-1iJh8?si=UwMUbMiVJYCBOy7B",
+  },
+  {
+    title:
+      "Reduce Query Time up to 60% with Selective Search - Rajani Maski, Lucidworks",
+    venue: "Activate · Lucidworks",
+    takeaway:
+      "Selective search partitions a large index into topically coherent shards and queries only the most relevant ones, cutting query time by up to 60% while preserving relevance.",
+    embed: "https://www.youtube.com/embed/CLX41ePTk3Q?si=2AwxGzomE6pKLsen",
   },
 ];
 

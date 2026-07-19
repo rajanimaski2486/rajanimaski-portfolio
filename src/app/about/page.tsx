@@ -33,7 +33,18 @@ export default function AboutPage() {
           <section key={block.title}>
             <h2 className="flex items-center gap-2 text-[15px] font-medium text-primary">
               <Icon className="h-4 w-4 shrink-0 text-accent" />
-              {block.title}
+              {block.link ? (
+                <a
+                  href={block.link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-accent"
+                >
+                  {block.title}
+                </a>
+              ) : (
+                block.title
+              )}
             </h2>
             <p className="mt-2 max-w-[560px] text-[14px] leading-relaxed text-secondary">
               {block.body}

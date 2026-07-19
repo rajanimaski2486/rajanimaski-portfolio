@@ -38,6 +38,18 @@ export default function TalksPage() {
               <p className="mt-1.5 text-[12.5px] leading-snug text-secondary">
                 {t.takeaway}
               </p>
+              {t.embed ? (
+                <div className="mt-3 aspect-video w-full max-w-[400px] overflow-hidden rounded-md border">
+                  <iframe
+                    className="h-full w-full"
+                    src={t.embed}
+                    title={t.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              ) : null}
               {t.video ? (
                 <a
                   href={t.video}
