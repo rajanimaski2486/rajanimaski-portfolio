@@ -13,7 +13,7 @@ export const site = {
   email: "rajani.maski@gmail.com",
   github: "https://github.com/rajanim",
   linkedin: "https://www.linkedin.com/in/rajanimaski/",
-  resume: "/RajaniMaski_Resume_June_2026.pdf",
+  resume: "/RajaniMaski_Resume_July_2026.pdf",
 };
 
 // Current role + prior background (mono lines under the headline).
